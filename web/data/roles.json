@@ -1,0 +1,82 @@
+[
+  {
+    "role": "Senior Full-Stack Engineer",
+    "company": "TechCorp",
+    "location": "San Francisco",
+    "salary": "$180,000 - $220,000",
+    "trend": "up",
+    "skills": ["Python", "React", "TypeScript", "AWS", "GraphQL"]
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "company": "DataFlow AI",
+    "location": "New York",
+    "salary": "$200,000 - $250,000",
+    "trend": "up",
+    "skills": ["Python", "TensorFlow", "PyTorch", "Kubernetes", "Docker"]
+  },
+  {
+    "role": "Frontend Developer",
+    "company": "PixelCraft",
+    "location": "London",
+    "salary": "£80,000 - £100,000",
+    "trend": "stable",
+    "skills": ["JavaScript", "React", "TypeScript", "CSS", "Next.js"]
+  },
+  {
+    "role": "DevOps Engineer",
+    "company": "CloudScale",
+    "location": "Singapore",
+    "salary": "$120,000 - $150,000",
+    "trend": "up",
+    "skills": ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"]
+  },
+  {
+    "role": "Backend Engineer",
+    "company": "Backendify",
+    "location": "Toronto",
+    "salary": "$130,000 - $160,000",
+    "trend": "stable",
+    "skills": ["Go", "PostgreSQL", "Redis", "gRPC", "Microservices"]
+  },
+  {
+    "role": "Data Scientist",
+    "company": "Analytics Pro",
+    "location": "San Francisco",
+    "salary": "$160,000 - $200,000",
+    "trend": "up",
+    "skills": ["Python", "R", "SQL", "Machine Learning", "Statistics"]
+  },
+  {
+    "role": "Platform Engineer",
+    "company": "InfraStack",
+    "location": "New York",
+    "salary": "$175,000 - $210,000",
+    "trend": "up",
+    "skills": ["Kubernetes", "Go", "Terraform", "Prometheus", "Istio"]
+  },
+  {
+    "role": "Mobile Developer",
+    "company": "AppWorks",
+    "location": "London",
+    "salary": "£90,000 - £110,000",
+    "trend": "down",
+    "skills": ["Swift", "Kotlin", "React Native", "iOS", "Android"]
+  },
+  {
+    "role": "Solutions Architect",
+    "company": "Enterprise Solutions",
+    "location": "Singapore",
+    "salary": "$180,000 - $230,000",
+    "trend": "stable",
+    "skills": ["AWS", "Azure", "GCP", "Enterprise Architecture", "Microservices"]
+  },
+  {
+    "role": "Security Engineer",
+    "company": "SecureNet",
+    "location": "Toronto",
+    "salary": "$140,000 - $175,000",
+    "trend": "up",
+    "skills": ["Security", "Penetration Testing", "Python", "Incident Response", "Compliance"]
+  }
+]

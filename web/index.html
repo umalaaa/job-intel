@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Intelligence Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-mark">JI</span>
+                <span class="logo-text" data-i18n="logo">Job Intelligence</span>
+            </div>
+            <button class="lang-toggle" id="langToggle">
+                <span class="lang-current">EN</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-alt">中文</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-date" id="heroDate"></p>
+                <h1 class="hero-title" data-i18n="heroTitle">Market Intelligence</h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Real-time insights on job trends, skills demand, and market dynamics</p>
+            </div>
+            <div class="hero-metrics">
+                <div class="metric-card metric-primary">
+                    <span class="metric-value" id="totalPostings">-</span>
+                    <span class="metric-label" data-i18n="totalPostings">Active Postings</span>
+                </div>
+                <div class="metric-card metric-growth">
+                    <span class="metric-value"><span id="growthRate">-</span>%</span>
+                    <span class="metric-label" data-i18n="growthRate">YoY Growth</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-summary">
+            <h2 class="section-title" data-i18n="regionalOverview">Regional Overview</h2>
+            <div class="regions-grid" id="regionsGrid"></div>
+        </section>
+
+        <section class="roles-section">
+            <h2 class="section-title" data-i18n="latestRoles">Latest Opportunities</h2>
+            <div class="table-wrapper">
+                <table class="roles-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="role">Role</th>
+                            <th data-i18n="company">Company</th>
+                            <th data-i18n="location">Location</th>
+                            <th data-i18n="salary">Salary</th>
+                            <th data-i18n="trend">Trend</th>
+                            <th data-i18n="skills">Key Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rolesTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title" data-i18n="trendingSkills">Trending Skills</h2>
+            <div class="skills-list" id="skillsList"></div>
+        </section>
+
+        <section class="insights-section">
+            <h2 class="section-title" data-i18n="marketInsights">Market Insights</h2>
+            <div class="insights-grid" id="insightsGrid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" data-i18n="footerText">Job Intelligence Dashboard © 2026. Updated</p>
+            <p class="footer-date" id="footerDate"></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

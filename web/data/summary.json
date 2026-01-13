@@ -1,0 +1,44 @@
+{
+  "title": {
+    "en": "Job Market Intelligence Dashboard",
+    "zh": "就业市场情报仪表板"
+  },
+  "updatedAt": "2026-01-13",
+  "regions": ["San Francisco", "New York", "London", "Singapore", "Toronto"],
+  "totalPostings": 45289,
+  "growthRate": 12.5,
+  "topSkills": [
+    {"name": "Python", "count": 8432, "change": 15.2},
+    {"name": "JavaScript", "count": 7821, "change": 8.7},
+    {"name": "AWS", "count": 6543, "change": 12.3},
+    {"name": "React", "count": 5987, "change": 18.9},
+    {"name": "Machine Learning", "count": 5234, "change": 22.4},
+    {"name": "Docker", "count": 4876, "change": 14.1},
+    {"name": "Kubernetes", "count": 4321, "change": 25.6},
+    {"name": "TypeScript", "count": 3987, "change": 19.8},
+    {"name": "Go", "count": 3456, "change": 16.7},
+    {"name": "GraphQL", "count": 2987, "change": 21.3}
+  ],
+  "insights": [
+    {
+      "title": {"en": "AI/ML Demand Surge", "zh": "人工智能/机器学习需求激增"},
+      "description": {"en": "Machine learning roles increased 22% YoY with top companies competing for talent.", "zh": "机器学习职位同比增长22%，顶尖公司争抢人才。"},
+      "icon": "🤖"
+    },
+    {
+      "title": {"en": "Remote Work Stabilized", "zh": "远程工作趋于稳定"},
+      "description": {"en": "65% of tech roles now offer remote options, up from 40% in 2024.", "zh": "65%的技术职位现在提供远程选项，比2024年的40%有所上升。"},
+      "icon": "🏠"
+    },
+    {
+      "title": {"en": "Cloud Native Growth", "zh": "云原生技术增长"},
+      "description": {"en": "Kubernetes skills demand up 25% as companies modernize infrastructure.", "zh": "随着企业基础设施现代化，Kubernetes技能需求增长25%。"},
+      "icon": "☁️"
+    },
+    {
+      "title": {"en": "Salary Premiums Rising", "zh": "薪资溢价上升"},
+      "description": {"en": "Full-stack developers command 18% higher salaries than frontend specialists.", "zh": "全栈开发者的薪资比前端专家高出18%。"},
+      "icon": "💰"
+    }
+  ]
+}
