@@ -11,42 +11,42 @@
     "San Francisco",
     "Remote - India"
   ],
-  "totalPostings": 122,
-  "growthRate": 0.0,
+  "totalPostings": 131,
+  "growthRate": 6.5,
   "topSkills": [
     {
       "name": "Cloud",
-      "count": 24,
+      "count": 26,
       "change": 0.0
     },
     {
       "name": "Security",
-      "count": 20,
+      "count": 22,
       "change": 0.0
     },
     {
       "name": "Machine Learning",
-      "count": 11,
+      "count": 12,
       "change": 0.0
     },
     {
       "name": "DevOps",
-      "count": 9,
+      "count": 8,
       "change": 0.0
     },
     {
       "name": "Python",
+      "count": 7,
+      "change": 0.0
+    },
+    {
+      "name": "Data",
       "count": 6,
       "change": 0.0
     },
     {
       "name": "Go",
       "count": 6,
-      "change": 0.0
-    },
-    {
-      "name": "Data",
-      "count": 5,
       "change": 0.0
     },
     {
@@ -63,6 +63,28 @@
       "name": "React",
       "count": 3,
       "change": 0.0
+    }
+  ],
+  "innovations": [
+    {
+      "name": "Cybersecurity",
+      "count": 22
+    },
+    {
+      "name": "AI",
+      "count": 15
+    },
+    {
+      "name": "Web3",
+      "count": 5
+    },
+    {
+      "name": "Machine Learning",
+      "count": 2
+    },
+    {
+      "name": "Biotech",
+      "count": 1
     }
   ],
   "insights": [

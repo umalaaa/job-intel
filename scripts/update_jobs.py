@@ -58,6 +58,30 @@ SKILL_KEYWORDS = {
     "cloud": "Cloud",
 }
 
+INNOVATION_KEYWORDS = {
+    "genai": "GenAI",
+    "generative ai": "GenAI",
+    "llm": "LLM",
+    "ai": "AI",
+    "machine learning": "Machine Learning",
+    "robot": "Robotics",
+    "robotics": "Robotics",
+    "autonomous": "Autonomous Systems",
+    "quantum": "Quantum",
+    "biotech": "Biotech",
+    "bioinformatics": "Bioinformatics",
+    "ar": "AR/VR",
+    "vr": "AR/VR",
+    "augmented reality": "AR/VR",
+    "virtual reality": "AR/VR",
+    "cybersecurity": "Cybersecurity",
+    "security": "Cybersecurity",
+    "energy": "Clean Energy",
+    "climate": "Climate Tech",
+    "blockchain": "Web3",
+    "web3": "Web3",
+}
+
 
 def ensure_dirs() -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -297,6 +321,15 @@ def compute_skills(title: str, tags: List[str]) -> List[str]:
     return sorted(set(skills))
 
 
+def compute_innovations(title: str, tags: List[str]) -> List[str]:
+    lower = f"{title} {', '.join(tags)}".lower()
+    innovations = []
+    for key, label in INNOVATION_KEYWORDS.items():
+        if re.search(rf"\b{re.escape(key)}\b", lower):
+            innovations.append(label)
+    return sorted(set(innovations))
+
+
 def salary_rank(
     salary_min: Optional[int], salary_max: Optional[int], salary_text: Optional[str]
 ) -> int:
@@ -312,7 +345,7 @@ def salary_rank(
     return 0
 
 
-def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
+def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
     cursor = conn.execute(
         "SELECT source, title, company, location, salary_min, salary_max, salary_text, category, tags, url, published_at FROM jobs"
     )
@@ -320,6 +353,8 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
     total = len(rows)
     locations: Dict[str, int] = {}
     skill_counts: Dict[str, int] = {}
+    innovation_counts: Dict[str, int] = {}
+    innovation_roles: List[Dict] = []
     roles: List[Dict] = []
 
     for (
@@ -337,27 +372,36 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
     ) in rows:
         tags = json.loads(tags_raw) if tags_raw else []
         skills = compute_skills(title, tags)
+        innovations = compute_innovations(title, tags)
         for skill in skills:
             skill_counts[skill] = skill_counts.get(skill, 0) + 1
+        for innovation in innovations:
+            innovation_counts[innovation] = innovation_counts.get(innovation, 0) + 1
         if location:
             locations[location] = locations.get(location, 0) + 1
         salary_display = salary_text
         if salary_display is None and salary_min and salary_max:
             salary_display = f"{salary_min}-{salary_max}"
         rank = salary_rank(salary_min, salary_max, salary_text)
-        roles.append(
-            {
-                "role": title,
-                "company": company or source.title(),
-                "location": location or "Remote",
-                "salary": salary_display or "N/A",
-                "trend": "up",
-                "skills": skills[:5],
-                "source": source,
-                "url": url,
-                "salary_rank": rank,
-            }
-        )
+        role_entry = {
+            "role": title,
+            "company": company or source.title(),
+            "location": location or "Remote",
+            "salary": salary_display or "N/A",
+            "trend": "up",
+            "skills": skills[:5],
+            "source": source,
+            "url": url,
+            "salary_rank": rank,
+        }
+        roles.append(role_entry)
+        if innovations:
+            innovation_roles.append(
+                {
+                    **role_entry,
+                    "innovations": innovations,
+                }
+            )
 
     roles = sorted(
         roles,
@@ -369,6 +413,17 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
 
     top_regions = sorted(locations.keys(), key=lambda k: locations[k], reverse=True)[:5]
     top_skills = sorted(skill_counts.items(), key=lambda kv: kv[1], reverse=True)[:10]
+    top_innovations = sorted(
+        innovation_counts.items(), key=lambda kv: kv[1], reverse=True
+    )[:8]
+
+    innovation_roles = sorted(
+        innovation_roles,
+        key=lambda r: r.get("salary_rank", 0),
+        reverse=True,
+    )[:10]
+    for role in innovation_roles:
+        role.pop("salary_rank", None)
 
     prev_total = conn.execute(
         "SELECT total_jobs FROM metrics ORDER BY id DESC LIMIT 1"
@@ -388,6 +443,9 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
         "growthRate": growth,
         "topSkills": [
             {"name": name, "count": count, "change": 0.0} for name, count in top_skills
+        ],
+        "innovations": [
+            {"name": name, "count": count} for name, count in top_innovations
         ],
         "insights": [
             {
@@ -425,7 +483,14 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict]]:
             },
         ],
     }
-    return summary, roles
+    innovations = {
+        "updatedAt": dt.date.today().isoformat(),
+        "categories": [
+            {"name": name, "count": count} for name, count in top_innovations
+        ],
+        "topRoles": innovation_roles,
+    }
+    return summary, roles, innovations
 
 
 def write_json(path: str, payload: object) -> None:
@@ -459,9 +524,10 @@ def main() -> None:
     )
     conn.commit()
 
-    summary, roles = generate_summary(conn)
+    summary, roles, innovations = generate_summary(conn)
     write_json(os.path.join(WEB_DATA_DIR, "summary.json"), summary)
     write_json(os.path.join(WEB_DATA_DIR, "roles.json"), roles)
+    write_json(os.path.join(WEB_DATA_DIR, "innovations.json"), innovations)
     conn.close()
 
     print(f"Updated {len(jobs)} jobs and refreshed web data.")

@@ -1,0 +1,181 @@
+{
+  "updatedAt": "2026-01-14",
+  "categories": [
+    {
+      "name": "Cybersecurity",
+      "count": 22
+    },
+    {
+      "name": "AI",
+      "count": 15
+    },
+    {
+      "name": "Web3",
+      "count": 5
+    },
+    {
+      "name": "Machine Learning",
+      "count": 2
+    },
+    {
+      "name": "Biotech",
+      "count": 1
+    }
+  ],
+  "topRoles": [
+    {
+      "role": "Software Engineer Agent Infrastructure",
+      "company": "OpenAI",
+      "location": "Remote",
+      "salary": "255000-405000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-agent-infrastructure-openai-1129438",
+      "innovations": [
+        "Cybersecurity"
+      ]
+    },
+    {
+      "role": "Solutions Engineer Commercial",
+      "company": "Tailscale",
+      "location": "Canada",
+      "salary": "201000-268000",
+      "trend": "up",
+      "skills": [
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-solutions-engineer-commercial-tailscale-1129514",
+      "innovations": [
+        "Cybersecurity"
+      ]
+    },
+    {
+      "role": "Senior Staff Machine Learning Engineer",
+      "company": "Cresta",
+      "location": "US, Canada",
+      "salary": "120000-180000",
+      "trend": "up",
+      "skills": [
+        "Machine Learning"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-staff-machine-learning-engineer-cresta-1129468",
+      "innovations": [
+        "Machine Learning"
+      ]
+    },
+    {
+      "role": "Staff Software Engineer Crypto",
+      "company": "Robinhood",
+      "location": "New York",
+      "salary": "120000-180000",
+      "trend": "up",
+      "skills": [
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-crypto-robinhood-1129455",
+      "innovations": [
+        "Cybersecurity"
+      ]
+    },
+    {
+      "role": "DevOps Lead Engineer",
+      "company": "Envoy Global, Inc.",
+      "location": "Chicago IL",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "DevOps",
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-devops-lead-engineer-envoy-global-inc-1129539",
+      "innovations": [
+        "Cybersecurity"
+      ]
+    },
+    {
+      "role": "Copy of Senior AI ML Engineer Applied Machine Learning",
+      "company": "Trase Systems",
+      "location": "USA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Machine Learning"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-copy-of-senior-ai-ml-engineer-applied-machine-learning-trase-systems-1129443",
+      "innovations": [
+        "AI",
+        "Machine Learning"
+      ]
+    },
+    {
+      "role": "Performance Marketing Manager GalaxyOne",
+      "company": "Galaxy Digital Services",
+      "location": "Remote",
+      "salary": "60000-120000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-performance-marketing-manager-galaxyone-galaxy-digital-services-1129485",
+      "innovations": [
+        "Web3"
+      ]
+    },
+    {
+      "role": "Junior Crypto Analyst & Trader",
+      "company": "WhiteBridge-Ltd",
+      "location": "Remote",
+      "salary": "70000-90000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-junior-crypto-analyst-trader-whitebridge-ltd-1129461",
+      "innovations": [
+        "Web3"
+      ]
+    },
+    {
+      "role": "Chief Operating Officer",
+      "company": "Shah & Associates CPAs PA",
+      "location": "USA",
+      "salary": "$190k-$200k",
+      "trend": "up",
+      "skills": [
+        "Machine Learning"
+      ],
+      "source": "remotive",
+      "url": "https://remotive.com/remote-jobs/sales-business/chief-operating-officer-2088514",
+      "innovations": [
+        "AI"
+      ]
+    },
+    {
+      "role": "Tech Lead Full-Stack Rails Engineer",
+      "company": "Mitre Media",
+      "location": "USA, Canada, USA timezones",
+      "salary": "$170k - $200k",
+      "trend": "up",
+      "skills": [
+        "Docker",
+        "JavaScript",
+        "Kubernetes",
+        "Machine Learning",
+        "React"
+      ],
+      "source": "remotive",
+      "url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746",
+      "innovations": [
+        "AI"
+      ]
+    }
+  ]
+}

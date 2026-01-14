@@ -4,6 +4,7 @@ class JobIntelligenceApp {
     this.translations = {};
     this.summaryData = null;
     this.rolesData = null;
+    this.innovationsData = null;
 
     this.translations = {
       en: {
@@ -23,6 +24,9 @@ class JobIntelligenceApp {
         source: 'Source',
         trendingSkills: 'Trending Skills',
         marketInsights: 'Market Insights',
+        innovationDemand: 'Innovation Demand',
+        topCategories: 'Top Categories',
+        innovationRoles: 'Innovation Roles',
         footerText: 'Job Intelligence Dashboard © 2026. Updated',
         trendUp: 'Rising',
         trendDown: 'Declining',
@@ -45,6 +49,9 @@ class JobIntelligenceApp {
         source: '来源',
         trendingSkills: '热门技能',
         marketInsights: '市场洞察',
+        innovationDemand: '创新需求',
+        topCategories: '热门类别',
+        innovationRoles: '创新职位',
         footerText: '就业情报仪表板 © 2026. 更新于',
         trendUp: '上升',
         trendDown: '下降',
@@ -59,7 +66,8 @@ class JobIntelligenceApp {
     try {
       await Promise.all([
         this.fetchSummary(),
-        this.fetchRoles()
+        this.fetchRoles(),
+        this.fetchInnovations()
       ]);
 
       this.render();
@@ -82,12 +90,20 @@ class JobIntelligenceApp {
     this.rolesData = await response.json();
   }
 
+  async fetchInnovations() {
+    const response = await fetch('data/innovations.json');
+    if (!response.ok) throw new Error('Failed to fetch innovations data');
+    this.innovationsData = await response.json();
+  }
+
   render() {
     this.renderHero();
     this.renderMetrics();
     this.renderRegions();
     this.renderRolesTable();
     this.renderSkills();
+    this.renderCategories();
+    this.renderInnovationRoles();
     this.renderInsights();
     this.renderDates();
   }
@@ -232,6 +248,84 @@ class JobIntelligenceApp {
       `;
 
       grid.appendChild(card);
+    });
+  }
+
+  renderCategories() {
+    const list = document.getElementById('categoriesList');
+    list.innerHTML = '';
+
+    if (!this.innovationsData || !this.innovationsData.categories.length) {
+      list.textContent = this.currentLang === 'en' ? 'No innovation data yet.' : '暂无创新数据。';
+      return;
+    }
+
+    const maxCount = Math.max(...this.innovationsData.categories.map(c => c.count));
+
+    this.innovationsData.categories.forEach((category, index) => {
+      const item = document.createElement('div');
+      item.className = 'category-item';
+      item.style.animationDelay = `${index * 0.1}s`;
+
+      const percentage = (category.count / maxCount) * 100;
+
+      item.innerHTML = `
+        <div class="category-header">
+          <span class="category-name">${category.name}</span>
+          <span class="category-count">${this.formatNumber(category.count)}</span>
+        </div>
+        <div class="category-bar-bg">
+          <div class="category-bar-fill" style="width: 0%" data-width="${percentage}%"></div>
+        </div>
+      `;
+
+      list.appendChild(item);
+    });
+
+    setTimeout(() => {
+      document.querySelectorAll('.category-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width;
+      });
+    }, 300);
+  }
+
+  renderInnovationRoles() {
+    const list = document.getElementById('innovationRolesList');
+    list.innerHTML = '';
+
+    if (!this.innovationsData || !this.innovationsData.topRoles.length) {
+      list.textContent = this.currentLang === 'en' ? 'No innovation roles found.' : '暂无创新职位。';
+      return;
+    }
+
+    this.innovationsData.topRoles.forEach((role, index) => {
+      const card = document.createElement('div');
+      card.className = 'innovation-role-card';
+      card.style.animationDelay = `${index * 0.1}s`;
+
+      const roleLink = role.url
+        ? `<a href="${role.url}" target="_blank" rel="noopener noreferrer" class="role-link">${role.role}</a>`
+        : role.role;
+
+      card.innerHTML = `
+        <div class="inn-role-header">
+          <div class="inn-role-info">
+            <div class="inn-role-name">${roleLink}</div>
+            <div class="inn-role-company">${role.company}</div>
+          </div>
+          <div class="inn-role-salary">${role.salary}</div>
+        </div>
+        <div class="inn-role-meta">
+          <span class="inn-role-location">${role.location}</span>
+        </div>
+        <div class="inn-innovations">
+          ${role.innovations.map(innovation =>
+            `<span class="inn-innovation-tag">${innovation}</span>`
+          ).join('')}
+        </div>
+      `;
+
+      list.appendChild(card);
     });
   }
 
