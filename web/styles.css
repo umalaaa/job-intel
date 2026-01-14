@@ -333,6 +333,17 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.role-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.role-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
 .role-company {
   color: var(--color-text-secondary);
   font-size: 0.875rem;
@@ -363,6 +374,19 @@ body {
 .trend-stable {
   background: rgba(148, 163, 184, 0.1);
   color: var(--color-neutral);
+}
+
+.source-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .skills-tags {
@@ -537,7 +561,9 @@ body {
   }
 
   .roles-table th:nth-child(6),
-  .roles-table td:nth-child(6) {
+  .roles-table td:nth-child(6),
+  .roles-table th:nth-child(7),
+  .roles-table td:nth-child(7) {
     display: none;
   }
 
@@ -550,8 +576,10 @@ body {
 @media (max-width: 480px) {
   .roles-table th:nth-child(4),
   .roles-table th:nth-child(5),
+  .roles-table th:nth-child(7),
   .roles-table td:nth-child(4),
-  .roles-table td:nth-child(5) {
+  .roles-table td:nth-child(5),
+  .roles-table td:nth-child(7) {
     display: none;
   }
 }

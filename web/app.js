@@ -20,6 +20,7 @@ class JobIntelligenceApp {
         salary: 'Salary',
         trend: 'Trend',
         skills: 'Key Skills',
+        source: 'Source',
         trendingSkills: 'Trending Skills',
         marketInsights: 'Market Insights',
         footerText: 'Job Intelligence Dashboard © 2026. Updated',
@@ -41,6 +42,7 @@ class JobIntelligenceApp {
         salary: '薪资',
         trend: '趋势',
         skills: '关键技能',
+        source: '来源',
         trendingSkills: '热门技能',
         marketInsights: '市场洞察',
         footerText: '就业情报仪表板 © 2026. 更新于',
@@ -141,9 +143,17 @@ class JobIntelligenceApp {
       const trendText = this.getTrendText(role.trend);
       const trendIcon = this.getTrendIcon(role.trend);
 
+      const roleLink = role.url
+        ? `<a href="${role.url}" target="_blank" rel="noopener noreferrer" class="role-link">${role.role}</a>`
+        : role.role;
+
+      const sourceBadge = role.source
+        ? `<span class="source-badge">${role.source}</span>`
+        : '-';
+
       row.innerHTML = `
         <td>
-          <div class="role-name">${role.role}</div>
+          <div class="role-name">${roleLink}</div>
           <div class="role-company">${role.company}</div>
         </td>
         <td>${role.company}</td>
@@ -162,6 +172,7 @@ class JobIntelligenceApp {
             ${role.skills.length > 3 ? `<span class="skill-tag">+${role.skills.length - 3}</span>` : ''}
           </div>
         </td>
+        <td>${sourceBadge}</td>
       `;
 
       tbody.appendChild(row);
