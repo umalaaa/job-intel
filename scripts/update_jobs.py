@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import argparse
-import csv
 import datetime as dt
-import io
+import hashlib
 import json
 import os
 import re
 import sqlite3
 import sys
+import time
 import urllib.request
 from typing import Dict, Iterable, List, Optional, Tuple
 
@@ -17,20 +17,29 @@ WEB_DATA_DIR = os.path.join(BASE_DIR, "web", "data")
 DB_PATH = os.path.join(DATA_DIR, "job-intel.db")
 LOG_DIR = os.path.join(BASE_DIR, "logs")
 
-REMOTIVE_URL = os.getenv("REMOTIVE_URL", "https://remotive.com/api/remote-jobs")
-REMOTEOK_URL = os.getenv("REMOTEOK_URL", "https://remoteok.com/api")
-JOBBANK_URL = os.getenv(
-    "JOBBANK_URL",
-    "https://open.canada.ca/data/dataset/ea639e28-c0fc-48bf-b5dd-b8899bd43072/resource/32d6617f-0a84-40bc-8d7b-6bfabd3c16f6/download/job-bank-open-data-all-job-postings-en-december2025.csv",
+TAVILY_URL = os.getenv("TAVILY_URL", "https://api.tavily.com/search")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
+TAVILY_MAX_RESULTS = int(os.getenv("TAVILY_MAX_RESULTS", "25"))
+TAVILY_SEARCH_DEPTH = os.getenv("TAVILY_SEARCH_DEPTH", "basic")
+TAVILY_QUERIES = os.getenv(
+    "TAVILY_QUERIES",
+    'site:gc.ca "job posting" Canada;site:canada.ca "job posting" Canada;site:jobbank.gc.ca "job posting";site:jobs.gc.ca "job posting";Canada "job posting" "apply"',
 )
-JOBBANK_CACHE_PATH = os.path.join(DATA_DIR, "jobbank.csv")
-JOBBANK_MAX_AGE_DAYS = int(os.getenv("JOBBANK_MAX_AGE_DAYS", "30"))
-JOBBANK_MIN_SALARY = int(os.getenv("JOBBANK_MIN_SALARY", "0"))
 RARE_TITLE_MAX_FREQ = int(os.getenv("RARE_TITLE_MAX_FREQ", "1"))
 
-SOURCE_REMOTIVE = "remotive"
-SOURCE_REMOTEOK = "remoteok"
-SOURCE_JOBBANK = "jobbank"
+SOURCE_TAVILY = "tavily"
+BLOCKLIST_DOMAINS = [
+    "linkedin.com/jobs",
+    "indeed.com",
+    "careerjet",
+    "workopolis",
+    "jooble",
+    "glassdoor",
+    "himalayas",
+    "drjobpro",
+    "remoteok",
+    "remotive",
+]
 
 SKILL_KEYWORDS = {
     "python": "Python",
@@ -107,27 +116,20 @@ def ensure_dirs() -> None:
     os.makedirs(LOG_DIR, exist_ok=True)
 
 
-def http_get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "job-intel-bot/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
+def http_post(url: str, payload: Dict) -> bytes:
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={
+            "User-Agent": "job-intel-bot/1.0",
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {TAVILY_API_KEY}",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=45) as resp:
         return resp.read()
-
-
-def load_jobbank_csv() -> Iterable[Dict[str, str]]:
-    use_cache = False
-    if os.path.exists(JOBBANK_CACHE_PATH):
-        age = dt.datetime.utcnow() - dt.datetime.utcfromtimestamp(
-            os.path.getmtime(JOBBANK_CACHE_PATH)
-        )
-        use_cache = age.days < JOBBANK_MAX_AGE_DAYS
-    if not use_cache:
-        raw = http_get(JOBBANK_URL)
-        with open(JOBBANK_CACHE_PATH, "wb") as f:
-            f.write(raw)
-    with open(JOBBANK_CACHE_PATH, "rb") as f:
-        decoded = f.read().decode("utf-8", errors="ignore")
-    decoded = decoded.replace("\x00", "")
-    return csv.DictReader(io.StringIO(decoded))
 
 
 def parse_salary_range(raw: str) -> Tuple[Optional[int], Optional[int], Optional[str]]:
@@ -223,117 +225,99 @@ def upsert_job(conn: sqlite3.Connection, job: Dict) -> None:
     )
 
 
-def fetch_remotive() -> List[Dict]:
-    payload = json.loads(http_get(REMOTIVE_URL))
-    jobs = []
+def parse_title_company(text: str) -> Tuple[str, Optional[str]]:
+    text = text.strip()
+    separators = [" at ", " @ ", " | ", " - ", " — ", " – "]
+    for sep in separators:
+        if sep in text:
+            parts = [p.strip() for p in text.split(sep) if p.strip()]
+            if len(parts) >= 2:
+                return parts[0], parts[1]
+    return text, None
+
+
+def infer_location(text: str, query: str) -> str:
+    lowered = f"{text} {query}".lower()
+    if "remote" in lowered:
+        return "Remote"
+    if "canada" in lowered:
+        return "Canada"
+    return "Canada"
+
+
+def build_external_id(url: str, title: str) -> str:
+    seed = f"{url}|{title}".encode("utf-8")
+    return hashlib.sha1(seed).hexdigest()
+
+
+def is_job_result(title: str, content: str) -> bool:
+    text = f"{title} {content}".lower()
+    keywords = ["job", "jobs", "hiring", "career", "careers", "position", "opening"]
+    return any(keyword in text for keyword in keywords)
+
+
+def tokenize(text: str) -> List[str]:
+    return re.findall(r"[A-Za-z0-9\+#\.]+", text)
+
+
+def fetch_tavily_jobs(
+    queries: List[str], max_results: int, search_depth: str
+) -> List[Dict]:
+    if not TAVILY_API_KEY:
+        raise RuntimeError("TAVILY_API_KEY missing")
+    jobs: List[Dict] = []
+    seen: set[str] = set()
     now = dt.datetime.utcnow().isoformat()
-    for item in payload.get("jobs", []):
-        salary_min, salary_max, salary_text = parse_salary_range(item.get("salary", ""))
-        job = {
-            "source": SOURCE_REMOTIVE,
-            "external_id": str(item.get("id")),
-            "title": item.get("title"),
-            "company": item.get("company_name"),
-            "location": item.get("candidate_required_location"),
-            "salary_min": salary_min,
-            "salary_max": salary_max,
-            "salary_text": salary_text,
-            "category": item.get("category"),
-            "tags": json.dumps(item.get("tags", [])),
-            "url": item.get("url"),
-            "published_at": item.get("publication_date"),
-            "fetched_at": now,
-            "is_remote": True,
+
+    for query in queries:
+        payload = {
+            "query": query,
+            "max_results": max_results,
+            "search_depth": search_depth,
+            "include_answer": False,
+            "include_raw_content": False,
         }
-        jobs.append(job)
-    return jobs
-
-
-def fetch_remoteok() -> List[Dict]:
-    payload = json.loads(http_get(REMOTEOK_URL))
-    now = dt.datetime.utcnow().isoformat()
-    jobs = []
-    for item in payload[1:]:
-        salary_min = item.get("salary_min") or None
-        salary_max = item.get("salary_max") or None
-        salary_text = None
-        if salary_min and salary_max:
-            salary_text = f"{salary_min}-{salary_max}"
-        job = {
-            "source": SOURCE_REMOTEOK,
-            "external_id": str(item.get("id")),
-            "title": item.get("position"),
-            "company": item.get("company"),
-            "location": item.get("location"),
-            "salary_min": salary_min,
-            "salary_max": salary_max,
-            "salary_text": salary_text,
-            "category": None,
-            "tags": json.dumps(item.get("tags", [])),
-            "url": item.get("url"),
-            "published_at": item.get("date"),
-            "fetched_at": now,
-            "is_remote": True,
-        }
-        jobs.append(job)
-    return jobs
-
-
-def find_value(row: Dict[str, str], keys: Iterable[str]) -> Optional[str]:
-    for key in keys:
-        if key in row and row[key]:
-            return row[key]
-    return None
-
-
-def fetch_jobbank() -> List[Dict]:
-    reader = load_jobbank_csv()
-    now = dt.datetime.utcnow().isoformat()
-    jobs = []
-    for row in reader:
-        title = find_value(row, ["Job title", "JOB_TITLE", "Job_Title", "job_title"])
-        if not title:
-            continue
-        salary_raw = find_value(
-            row, ["Salary", "Wage", "SALARY", "WAGE", "hourly_wage", "annual_salary"]
-        )
-        salary_min, salary_max, salary_text = parse_salary_range(salary_raw or "")
-        if JOBBANK_MIN_SALARY > 0:
-            highest = salary_max or salary_min
-            if highest is not None and highest < JOBBANK_MIN_SALARY:
+        response = json.loads(http_post(TAVILY_URL, payload))
+        for result in response.get("results", []):
+            title_text = (result.get("title") or "").strip()
+            content = (result.get("content") or "").strip()
+            url = (result.get("url") or "").strip()
+            if not title_text and not content:
                 continue
-        job = {
-            "source": SOURCE_JOBBANK,
-            "external_id": f"jobbank:{row.get('Job Bank number') or row.get('Job_Bank_number') or row.get('id') or title}",
-            "title": title,
-            "company": find_value(
-                row, ["Employer name", "Employer", "EMPLOYER_NAME", "company"]
-            ),
-            "location": ", ".join(
-                filter(
-                    None,
-                    [
-                        find_value(row, ["City", "CITY", "city"]),
-                        find_value(row, ["Province", "PROVINCE", "province"]),
-                    ],
-                )
-            ),
-            "salary_min": salary_min,
-            "salary_max": salary_max,
-            "salary_text": salary_text,
-            "category": find_value(row, ["NOC group", "NOC", "noc", "occupation"]),
-            "tags": json.dumps([]),
-            "url": find_value(row, ["Job Bank URL", "URL", "url"]),
-            "published_at": find_value(row, ["Date posted", "DATE_POSTED", "posted"]),
-            "fetched_at": now,
-            "is_remote": False,
-        }
-        jobs.append(job)
+            if not is_job_result(title_text, content):
+                continue
+            title, company = parse_title_company(title_text)
+            salary_min, salary_max, salary_text = parse_salary_range(
+                f"{title_text} {content}"
+            )
+            tags = tokenize(f"{title_text} {content}")
+            ext_id = build_external_id(url or title_text, title)
+            if ext_id in seen:
+                continue
+            seen.add(ext_id)
+            job = {
+                "source": SOURCE_TAVILY,
+                "external_id": ext_id,
+                "title": title,
+                "company": company or "Unknown",
+                "location": infer_location(f"{title_text} {content}", query),
+                "salary_min": salary_min,
+                "salary_max": salary_max,
+                "salary_text": salary_text,
+                "category": "Tavily Search",
+                "tags": json.dumps(tags),
+                "url": url,
+                "published_at": result.get("published_date"),
+                "fetched_at": now,
+                "is_remote": "remote" in (title_text + " " + content).lower(),
+            }
+            jobs.append(job)
+        time.sleep(0.5)
     return jobs
 
 
-def compute_skills(title: str, tags: List[str]) -> List[str]:
-    lower = f"{title} {', '.join(tags)}".lower()
+def compute_skills(title: str, tags: Iterable[str]) -> List[str]:
+    lower = f"{title} {', '.join([str(tag) for tag in tags])}".lower()
     skills = []
     for key, label in SKILL_KEYWORDS.items():
         if re.search(rf"\b{re.escape(key)}\b", lower):
@@ -341,8 +325,8 @@ def compute_skills(title: str, tags: List[str]) -> List[str]:
     return sorted(set(skills))
 
 
-def compute_innovations(title: str, tags: List[str]) -> List[str]:
-    lower = f"{title} {', '.join(tags)}".lower()
+def compute_innovations(title: str, tags: Iterable[str]) -> List[str]:
+    lower = f"{title} {', '.join([str(tag) for tag in tags])}".lower()
     innovations = []
     for key, label in INNOVATION_KEYWORDS.items():
         if re.search(rf"\b{re.escape(key)}\b", lower):
@@ -350,8 +334,8 @@ def compute_innovations(title: str, tags: List[str]) -> List[str]:
     return sorted(set(innovations))
 
 
-def compute_weird_tags(title: str, tags: List[str]) -> List[str]:
-    lower = f"{title} {', '.join(tags)}".lower()
+def compute_weird_tags(title: str, tags: Iterable[str]) -> List[str]:
+    lower = f"{title} {', '.join([str(tag) for tag in tags])}".lower()
     weird = []
     for key, label in WEIRD_KEYWORDS.items():
         if re.search(rf"\b{re.escape(key)}\b", lower):
@@ -434,28 +418,14 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict, 
         }
         roles.append(role_entry)
         if innovations:
-            innovation_roles.append(
-                {
-                    **role_entry,
-                    "innovations": innovations,
-                }
-            )
+            innovation_roles.append({**role_entry, "innovations": innovations})
         if weird_tags:
-            weird_roles.append(
-                {
-                    **role_entry,
-                    "weirdTags": weird_tags,
-                }
-            )
+            weird_roles.append({**role_entry, "weirdTags": weird_tags})
         title_key = title.strip().lower()
         if title_counts.get(title_key, 0) <= RARE_TITLE_MAX_FREQ:
             rare_roles.append(dict(role_entry))
 
-    roles = sorted(
-        roles,
-        key=lambda r: r.get("salary_rank", 0),
-        reverse=True,
-    )[:50]
+    roles = sorted(roles, key=lambda r: r.get("salary_rank", 0), reverse=True)[:50]
     for role in roles:
         role.pop("salary_rank", None)
 
@@ -466,11 +436,21 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict, 
     )[:8]
 
     innovation_roles = sorted(
-        innovation_roles,
-        key=lambda r: r.get("salary_rank", 0),
-        reverse=True,
+        innovation_roles, key=lambda r: r.get("salary_rank", 0), reverse=True
     )[:10]
     for role in innovation_roles:
+        role.pop("salary_rank", None)
+
+    weird_roles = sorted(
+        weird_roles, key=lambda r: r.get("salary_rank", 0), reverse=True
+    )[:20]
+    for role in weird_roles:
+        role.pop("salary_rank", None)
+
+    rare_roles = sorted(
+        rare_roles, key=lambda r: r.get("salary_rank", 0), reverse=True
+    )[:20]
+    for role in rare_roles:
         role.pop("salary_rank", None)
 
     prev_total = conn.execute(
@@ -497,38 +477,28 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict, 
         ],
         "insights": [
             {
-                "title": {"en": "Remote roles lead", "zh": "远程职位领先"},
+                "title": {"en": "Current Canada focus", "zh": "聚焦加拿大当前岗位"},
                 "description": {
-                    "en": "Remote-first sources dominate the high-paying list.",
-                    "zh": "高薪职位主要来自远程来源。",
-                },
-                "icon": "🌍",
-            },
-            {
-                "title": {"en": "Canada demand", "zh": "加拿大需求"},
-                "description": {
-                    "en": "Job Bank data captures Canadian postings above the salary threshold.",
-                    "zh": "官方数据收录加拿大高薪岗位。",
+                    "en": "Tavily search aggregates current Canada job listings.",
+                    "zh": "Tavily 搜索聚合加拿大当前岗位。",
                 },
                 "icon": "🇨🇦",
+            },
+            {
+                "title": {"en": "Remote demand", "zh": "远程需求"},
+                "description": {
+                    "en": "Remote postings are included in the search feed.",
+                    "zh": "搜索结果包含远程岗位。",
+                },
+                "icon": "🌍",
             },
         ],
         "sources": [
             {
-                "name": "Remotive",
-                "url": "https://remotive.com",
-                "note": "Remote jobs via Remotive API",
-            },
-            {
-                "name": "RemoteOK",
-                "url": "https://remoteok.com",
-                "note": "Remote jobs via RemoteOK JSON feed",
-            },
-            {
-                "name": "Job Bank",
-                "url": "https://open.canada.ca/data/en/dataset/ea639e28-c0fc-48bf-b5dd-b8899bd43072",
-                "note": "Canada Job Bank open data",
-            },
+                "name": "Tavily",
+                "url": "https://tavily.com",
+                "note": "Current jobs via Tavily Search API",
+            }
         ],
     }
     innovations = {
@@ -538,22 +508,6 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict, 
         ],
         "topRoles": innovation_roles,
     }
-
-    weird_roles = sorted(
-        weird_roles,
-        key=lambda r: r.get("salary_rank", 0),
-        reverse=True,
-    )[:20]
-    for role in weird_roles:
-        role.pop("salary_rank", None)
-
-    rare_roles = sorted(
-        rare_roles,
-        key=lambda r: r.get("salary_rank", 0),
-        reverse=True,
-    )[:20]
-    for role in rare_roles:
-        role.pop("salary_rank", None)
 
     rare_jobs = {
         "updatedAt": dt.date.today().isoformat(),
@@ -571,20 +525,20 @@ def write_json(path: str, payload: object) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--jobbank-only", action="store_true")
-    parser.add_argument("--remote-only", action="store_true")
+    parser.add_argument("--queries", default="", help="Override Tavily queries")
+    parser.add_argument("--max-results", type=int, default=TAVILY_MAX_RESULTS)
+    parser.add_argument("--search-depth", default=TAVILY_SEARCH_DEPTH)
     args = parser.parse_args()
 
     ensure_dirs()
     conn = sqlite3.connect(DB_PATH)
     init_db(conn)
 
-    jobs: List[Dict] = []
-    if not args.jobbank_only:
-        jobs.extend(fetch_remotive())
-        jobs.extend(fetch_remoteok())
-    if not args.remote_only:
-        jobs.extend(fetch_jobbank())
+    conn.execute("DELETE FROM jobs")
+    conn.commit()
+
+    queries = [q.strip() for q in (args.queries or TAVILY_QUERIES).split(";") if q]
+    jobs = fetch_tavily_jobs(queries, args.max_results, args.search_depth)
 
     for job in jobs:
         upsert_job(conn, job)

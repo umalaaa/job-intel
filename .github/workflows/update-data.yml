@@ -22,8 +22,9 @@ jobs:
           python-version: "3.11"
       - name: Update job data
         env:
-          JOBBANK_MAX_AGE_DAYS: "30"
-          JOBBANK_MIN_SALARY: "0"
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          TAVILY_MAX_RESULTS: "25"
+          TAVILY_SEARCH_DEPTH: "basic"
           RARE_TITLE_MAX_FREQ: "1"
         run: |
           python scripts/update_jobs.py
