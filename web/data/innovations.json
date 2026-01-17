@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-01-14",
+  "updatedAt": "2026-01-17",
   "categories": [
     {
       "name": "Cybersecurity",
-      "count": 22
+      "count": 23
     },
     {
       "name": "AI",
-      "count": 15
+      "count": 17
     },
     {
       "name": "Web3",
@@ -15,10 +15,14 @@
     },
     {
       "name": "Machine Learning",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Biotech",
+      "count": 1
+    },
+    {
+      "name": "Robotics",
       "count": 1
     }
   ],

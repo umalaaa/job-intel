@@ -1,0 +1,240 @@
+{
+  "updatedAt": "2026-01-17",
+  "rareRoles": [
+    {
+      "role": "Software Engineer Agent Infrastructure",
+      "company": "OpenAI",
+      "location": "Remote",
+      "salary": "255000-405000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-agent-infrastructure-openai-1129438"
+    },
+    {
+      "role": "Senior Data Engineer",
+      "company": "Sanctuary Computer",
+      "location": "Remote",
+      "salary": "180000-270000",
+      "trend": "up",
+      "skills": [
+        "Data",
+        "Python"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-data-engineer-sanctuary-computer-1129532"
+    },
+    {
+      "role": "Solutions Engineer Commercial",
+      "company": "Tailscale",
+      "location": "Canada",
+      "salary": "201000-268000",
+      "trend": "up",
+      "skills": [
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-solutions-engineer-commercial-tailscale-1129514"
+    },
+    {
+      "role": "Product Engineer AuthKit",
+      "company": "WorkOS",
+      "location": "Remote",
+      "salary": "175000-250000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-product-engineer-authkit-workos-1129477"
+    },
+    {
+      "role": "Senior Staff Machine Learning Engineer",
+      "company": "Cresta",
+      "location": "US, Canada",
+      "salary": "120000-180000",
+      "trend": "up",
+      "skills": [
+        "Machine Learning"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-staff-machine-learning-engineer-cresta-1129468"
+    },
+    {
+      "role": "Staff Software Engineer Crypto",
+      "company": "Robinhood",
+      "location": "New York",
+      "salary": "120000-180000",
+      "trend": "up",
+      "skills": [
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-crypto-robinhood-1129455"
+    },
+    {
+      "role": "DevOps Lead Engineer",
+      "company": "Envoy Global, Inc.",
+      "location": "Chicago IL",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "DevOps",
+        "Security"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-devops-lead-engineer-envoy-global-inc-1129539"
+    },
+    {
+      "role": "Sales & Business Development Director",
+      "company": "NEAR Foundation",
+      "location": "San Francisco",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-sales-business-development-director-near-foundation-1129533"
+    },
+    {
+      "role": "Senior Software Engineer Backend",
+      "company": "Cresta",
+      "location": "Toronto",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Go",
+        "Python"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-backend-cresta-1129520"
+    },
+    {
+      "role": "Senior Software Engineer Rocket Ready",
+      "company": "Rocket Money",
+      "location": "San Francisco, CA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-rocket-ready-rocket-money-1129510"
+    },
+    {
+      "role": "Senior Backend Engineer Submission Processing Team",
+      "company": "Kalepa",
+      "location": "New York",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-submission-processing-team-kalepa-1129505"
+    },
+    {
+      "role": "Principal DevSecOps Engineer",
+      "company": "GHX",
+      "location": "USA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Cloud"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-principal-devsecops-engineer-ghx-1129499"
+    },
+    {
+      "role": "Principal Software Engineer",
+      "company": "Recorded Future",
+      "location": "Boston, MA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-principal-software-engineer-recorded-future-1129489"
+    },
+    {
+      "role": "Salesforce Solution Architect Experience Cloud",
+      "company": "NeuraFlash, Part of Accenture",
+      "location": "Remote - United States",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Cloud"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-salesforce-solution-architect-experience-cloud-neuraflash-part-of-accenture-1129487"
+    },
+    {
+      "role": "Software Engineer Site Reliability Engineer",
+      "company": "Thumbtack",
+      "location": "Remote, Ontario",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-site-reliability-engineer-thumbtack-1129471"
+    },
+    {
+      "role": "Staff Software Engineer Java",
+      "company": "Ping Identity",
+      "location": "Vancouver, WA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "Java"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-java-ping-identity-1129467"
+    },
+    {
+      "role": "Copy of Senior AI ML Engineer Applied Machine Learning",
+      "company": "Trase Systems",
+      "location": "USA",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [
+        "Machine Learning"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-copy-of-senior-ai-ml-engineer-applied-machine-learning-trase-systems-1129443"
+    },
+    {
+      "role": "Senior Software Engineer Backend Engineering",
+      "company": "Trase Systems",
+      "location": "Remote",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-backend-engineering-trase-systems-1129442"
+    },
+    {
+      "role": "Site Reliability Engineer",
+      "company": "Bobsled",
+      "location": "US/Canada",
+      "salary": "100000-150000",
+      "trend": "up",
+      "skills": [],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-site-reliability-engineer-bobsled-1129429"
+    },
+    {
+      "role": "Junior Software Developer Full Stack",
+      "company": "KOHO",
+      "location": "Remote",
+      "salary": "100000-130000",
+      "trend": "up",
+      "skills": [
+        "Cloud",
+        "Docker",
+        "Go",
+        "JavaScript",
+        "React"
+      ],
+      "source": "remoteok",
+      "url": "https://remoteOK.com/remote-jobs/remote-junior-software-developer-full-stack-koho-1129454"
+    }
+  ],
+  "weirdRoles": []
+}

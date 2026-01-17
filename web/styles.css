@@ -411,6 +411,168 @@ body {
   margin-bottom: var(--spacing-2xl);
 }
 
+.rare-weird-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.rare-weird-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.rare-panel,
+.weird-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.rare-panel::before,
+.weird-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.6), rgba(16, 185, 129, 0.6));
+  opacity: 0.8;
+}
+
+.weird-panel::before {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(236, 72, 153, 0.6));
+}
+
+.panel-heading {
+  margin-bottom: var(--spacing-md);
+}
+
+.panel-subtitle {
+  color: var(--color-text-secondary);
+  font-weight: 300;
+  margin-left: 0.5rem;
+}
+
+.panel-description {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+}
+
+.rare-jobs-list,
+.weird-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.rare-job-card,
+.weird-job-card {
+  background: var(--color-bg-alt);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  animation: fadeInUp 0.5s ease backwards;
+  transition: all var(--transition-normal);
+}
+
+.rare-job-card:hover,
+.weird-job-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(10, 22, 40, 0.3);
+}
+
+.weird-job-card {
+  background: rgba(30, 56, 88, 0.5);
+}
+
+.rare-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.rare-card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.rare-card-salary {
+  font-family: var(--font-display);
+  color: var(--color-success);
+  font-weight: bold;
+  text-align: right;
+}
+
+.rare-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.rare-card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.rare-card-location::before {
+  content: "✦";
+  color: var(--color-accent);
+}
+
+.rare-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.rare-tag {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--color-accent);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.weird-job-card .rare-tag {
+  background: rgba(236, 72, 153, 0.12);
+  color: #f472b6;
+  border-color: rgba(236, 72, 153, 0.25);
+}
+
+.rare-tag.empty {
+  color: var(--color-text-secondary);
+  border-color: rgba(148, 163, 184, 0.3);
+  background: transparent;
+}
+
+.rare-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rare-source {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+
 .section-subtitle {
   font-size: 1.5rem;
   color: var(--color-text-secondary);
@@ -728,6 +890,10 @@ body {
   }
 
   .innovations-container {
+    grid-template-columns: 1fr;
+  }
+
+  .rare-weird-grid {
     grid-template-columns: 1fr;
   }
 

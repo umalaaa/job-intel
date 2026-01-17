@@ -3,34 +3,44 @@
     "en": "Job Market Intelligence Dashboard",
     "zh": "就业市场情报仪表板"
   },
-  "updatedAt": "2026-01-14",
+  "updatedAt": "2026-01-17",
   "regions": [
     "Remote",
     "Worldwide",
     "USA",
     "San Francisco",
-    "Remote - India"
+    "Novato, CA"
   ],
-  "totalPostings": 131,
-  "growthRate": 6.5,
+  "totalPostings": 164,
+  "growthRate": 54.72,
   "topSkills": [
     {
       "name": "Cloud",
-      "count": 26,
+      "count": 31,
       "change": 0.0
     },
     {
       "name": "Security",
-      "count": 22,
+      "count": 23,
       "change": 0.0
     },
     {
       "name": "Machine Learning",
-      "count": 12,
+      "count": 13,
       "change": 0.0
     },
     {
       "name": "DevOps",
+      "count": 9,
+      "change": 0.0
+    },
+    {
+      "name": "Data",
+      "count": 8,
+      "change": 0.0
+    },
+    {
+      "name": "Docker",
       "count": 8,
       "change": 0.0
     },
@@ -40,39 +50,29 @@
       "change": 0.0
     },
     {
-      "name": "Data",
-      "count": 6,
+      "name": "Go",
+      "count": 7,
       "change": 0.0
     },
     {
-      "name": "Go",
-      "count": 6,
+      "name": "React",
+      "count": 4,
       "change": 0.0
     },
     {
       "name": "Java",
       "count": 4,
       "change": 0.0
-    },
-    {
-      "name": "JavaScript",
-      "count": 3,
-      "change": 0.0
-    },
-    {
-      "name": "React",
-      "count": 3,
-      "change": 0.0
     }
   ],
   "innovations": [
     {
       "name": "Cybersecurity",
-      "count": 22
+      "count": 23
     },
     {
       "name": "AI",
-      "count": 15
+      "count": 17
     },
     {
       "name": "Web3",
@@ -80,10 +80,14 @@
     },
     {
       "name": "Machine Learning",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Biotech",
+      "count": 1
+    },
+    {
+      "name": "Robotics",
       "count": 1
     }
   ],

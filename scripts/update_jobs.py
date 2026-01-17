@@ -25,12 +25,12 @@ JOBBANK_URL = os.getenv(
 )
 JOBBANK_CACHE_PATH = os.path.join(DATA_DIR, "jobbank.csv")
 JOBBANK_MAX_AGE_DAYS = int(os.getenv("JOBBANK_MAX_AGE_DAYS", "30"))
+JOBBANK_MIN_SALARY = int(os.getenv("JOBBANK_MIN_SALARY", "0"))
+RARE_TITLE_MAX_FREQ = int(os.getenv("RARE_TITLE_MAX_FREQ", "1"))
 
 SOURCE_REMOTIVE = "remotive"
 SOURCE_REMOTEOK = "remoteok"
 SOURCE_JOBBANK = "jobbank"
-
-HIGH_PAY_THRESHOLD = int(os.getenv("HIGH_PAY_THRESHOLD", "120000"))
 
 SKILL_KEYWORDS = {
     "python": "Python",
@@ -80,6 +80,24 @@ INNOVATION_KEYWORDS = {
     "climate": "Climate Tech",
     "blockchain": "Web3",
     "web3": "Web3",
+}
+
+WEIRD_KEYWORDS = {
+    "prompt engineer": "Prompt Engineering",
+    "futurist": "Futurist",
+    "quantum": "Quantum",
+    "bioinformatics": "Bioinformatics",
+    "ethicist": "AI Ethics",
+    "responsible ai": "AI Ethics",
+    "cryptographer": "Cryptography",
+    "threat hunter": "Threat Hunter",
+    "astrophys": "Astrophysics",
+    "geospatial": "Geospatial",
+    "metaverse": "Metaverse",
+    "behavioral": "Behavioral Science",
+    "neuroscience": "Neuroscience",
+    "policy": "Policy",
+    "regulatory": "Regulatory",
 }
 
 
@@ -280,8 +298,10 @@ def fetch_jobbank() -> List[Dict]:
             row, ["Salary", "Wage", "SALARY", "WAGE", "hourly_wage", "annual_salary"]
         )
         salary_min, salary_max, salary_text = parse_salary_range(salary_raw or "")
-        if salary_max is not None and salary_max < HIGH_PAY_THRESHOLD:
-            continue
+        if JOBBANK_MIN_SALARY > 0:
+            highest = salary_max or salary_min
+            if highest is not None and highest < JOBBANK_MIN_SALARY:
+                continue
         job = {
             "source": SOURCE_JOBBANK,
             "external_id": f"jobbank:{row.get('Job Bank number') or row.get('Job_Bank_number') or row.get('id') or title}",
@@ -330,6 +350,15 @@ def compute_innovations(title: str, tags: List[str]) -> List[str]:
     return sorted(set(innovations))
 
 
+def compute_weird_tags(title: str, tags: List[str]) -> List[str]:
+    lower = f"{title} {', '.join(tags)}".lower()
+    weird = []
+    for key, label in WEIRD_KEYWORDS.items():
+        if re.search(rf"\b{re.escape(key)}\b", lower):
+            weird.append(label)
+    return sorted(set(weird))
+
+
 def salary_rank(
     salary_min: Optional[int], salary_max: Optional[int], salary_text: Optional[str]
 ) -> int:
@@ -345,7 +374,7 @@ def salary_rank(
     return 0
 
 
-def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
+def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict, Dict]:
     cursor = conn.execute(
         "SELECT source, title, company, location, salary_min, salary_max, salary_text, category, tags, url, published_at FROM jobs"
     )
@@ -354,8 +383,16 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
     locations: Dict[str, int] = {}
     skill_counts: Dict[str, int] = {}
     innovation_counts: Dict[str, int] = {}
+    title_counts: Dict[str, int] = {}
     innovation_roles: List[Dict] = []
+    weird_roles: List[Dict] = []
+    rare_roles: List[Dict] = []
     roles: List[Dict] = []
+
+    for row in rows:
+        title_counts[row[1].strip().lower()] = (
+            title_counts.get(row[1].strip().lower(), 0) + 1
+        )
 
     for (
         source,
@@ -373,6 +410,7 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
         tags = json.loads(tags_raw) if tags_raw else []
         skills = compute_skills(title, tags)
         innovations = compute_innovations(title, tags)
+        weird_tags = compute_weird_tags(title, tags)
         for skill in skills:
             skill_counts[skill] = skill_counts.get(skill, 0) + 1
         for innovation in innovations:
@@ -402,6 +440,16 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
                     "innovations": innovations,
                 }
             )
+        if weird_tags:
+            weird_roles.append(
+                {
+                    **role_entry,
+                    "weirdTags": weird_tags,
+                }
+            )
+        title_key = title.strip().lower()
+        if title_counts.get(title_key, 0) <= RARE_TITLE_MAX_FREQ:
+            rare_roles.append(dict(role_entry))
 
     roles = sorted(
         roles,
@@ -490,7 +538,30 @@ def generate_summary(conn: sqlite3.Connection) -> Tuple[Dict, List[Dict], Dict]:
         ],
         "topRoles": innovation_roles,
     }
-    return summary, roles, innovations
+
+    weird_roles = sorted(
+        weird_roles,
+        key=lambda r: r.get("salary_rank", 0),
+        reverse=True,
+    )[:20]
+    for role in weird_roles:
+        role.pop("salary_rank", None)
+
+    rare_roles = sorted(
+        rare_roles,
+        key=lambda r: r.get("salary_rank", 0),
+        reverse=True,
+    )[:20]
+    for role in rare_roles:
+        role.pop("salary_rank", None)
+
+    rare_jobs = {
+        "updatedAt": dt.date.today().isoformat(),
+        "rareRoles": rare_roles,
+        "weirdRoles": weird_roles,
+    }
+
+    return summary, roles, innovations, rare_jobs
 
 
 def write_json(path: str, payload: object) -> None:
@@ -524,10 +595,11 @@ def main() -> None:
     )
     conn.commit()
 
-    summary, roles, innovations = generate_summary(conn)
+    summary, roles, innovations, rare_jobs = generate_summary(conn)
     write_json(os.path.join(WEB_DATA_DIR, "summary.json"), summary)
     write_json(os.path.join(WEB_DATA_DIR, "roles.json"), roles)
     write_json(os.path.join(WEB_DATA_DIR, "innovations.json"), innovations)
+    write_json(os.path.join(WEB_DATA_DIR, "rare_jobs.json"), rare_jobs)
     conn.close()
 
     print(f"Updated {len(jobs)} jobs and refreshed web data.")

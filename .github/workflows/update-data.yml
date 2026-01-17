@@ -22,14 +22,15 @@ jobs:
           python-version: "3.11"
       - name: Update job data
         env:
-          HIGH_PAY_THRESHOLD: "120000"
           JOBBANK_MAX_AGE_DAYS: "30"
+          JOBBANK_MIN_SALARY: "0"
+          RARE_TITLE_MAX_FREQ: "1"
         run: |
           python scripts/update_jobs.py
       - name: Commit updates
         run: |
           if git status --porcelain | grep -q "web/data/"; then
-            git add web/data/summary.json web/data/roles.json web/data/innovations.json
+            git add web/data/summary.json web/data/roles.json web/data/innovations.json web/data/rare_jobs.json
             git commit -m "chore: refresh job data"
           fi
       - name: Push changes

@@ -5,6 +5,7 @@ class JobIntelligenceApp {
     this.summaryData = null;
     this.rolesData = null;
     this.innovationsData = null;
+    this.rareJobsData = null;
 
     this.translations = {
       en: {
@@ -67,7 +68,8 @@ class JobIntelligenceApp {
       await Promise.all([
         this.fetchSummary(),
         this.fetchRoles(),
-        this.fetchInnovations()
+        this.fetchInnovations(),
+        this.fetchRareJobs()
       ]);
 
       this.render();
@@ -96,6 +98,12 @@ class JobIntelligenceApp {
     this.innovationsData = await response.json();
   }
 
+  async fetchRareJobs() {
+    const response = await fetch('data/rare_jobs.json');
+    if (!response.ok) throw new Error('Failed to fetch rare jobs data');
+    this.rareJobsData = await response.json();
+  }
+
   render() {
     this.renderHero();
     this.renderMetrics();
@@ -105,6 +113,7 @@ class JobIntelligenceApp {
     this.renderCategories();
     this.renderInnovationRoles();
     this.renderInsights();
+    this.renderRareJobs();
     this.renderDates();
   }
 
@@ -329,6 +338,83 @@ class JobIntelligenceApp {
     });
   }
 
+  renderRareJobs() {
+    const rareList = document.getElementById('rareJobsList');
+    const weirdList = document.getElementById('weirdJobsList');
+
+    rareList.innerHTML = '';
+    weirdList.innerHTML = '';
+
+    if (!this.rareJobsData) {
+      const message = this.currentLang === 'en' ? 'Rare roles will appear soon.' : '稀有职位即将发布。';
+      rareList.textContent = message;
+      weirdList.textContent = message;
+      return;
+    }
+
+    const rareRoles = this.rareJobsData.rareRoles || [];
+    const weirdRoles = this.rareJobsData.weirdRoles || [];
+
+    if (!rareRoles.length) {
+      rareList.textContent = this.currentLang === 'en' ? 'No rare jobs yet.' : '暂无稀有职位。';
+    } else {
+      rareRoles.forEach((role, index) => {
+        const card = document.createElement('article');
+        card.className = 'rare-job-card';
+        card.style.animationDelay = `${index * 0.08}s`;
+        card.innerHTML = this.buildRareWeirdCard(role);
+        rareList.appendChild(card);
+      });
+    }
+
+    if (!weirdRoles.length) {
+      weirdList.textContent = this.currentLang === 'en' ? 'No weird jobs yet.' : '暂无怪奇职位。';
+    } else {
+      weirdRoles.forEach((role, index) => {
+        const card = document.createElement('article');
+        card.className = 'weird-job-card';
+        card.style.animationDelay = `${index * 0.08}s`;
+        card.innerHTML = this.buildRareWeirdCard(role, true);
+        weirdList.appendChild(card);
+      });
+    }
+  }
+
+  buildRareWeirdCard(role, isWeird = false) {
+    const roleLink = role.url
+      ? `<a href="${role.url}" target="_blank" rel="noopener noreferrer" class="role-link">${role.role}</a>`
+      : role.role;
+
+    const tags = (isWeird && role.weirdTags && role.weirdTags.length)
+      ? role.weirdTags
+      : role.skills || [];
+
+    const tagMarkup = tags.length
+      ? tags.map(tag => `<span class="rare-tag">${tag}</span>`).join('')
+      : `<span class="rare-tag empty">${this.currentLang === 'en' ? 'No tags' : '暂无标签'}</span>`;
+
+    const sourceMarkup = role.source
+      ? `<span class="rare-source">${role.source}</span>`
+      : '';
+
+    return `
+      <div class="rare-card-header">
+        <div class="rare-card-title">${roleLink}</div>
+        <div class="rare-card-salary">${role.salary}</div>
+      </div>
+      <div class="rare-card-meta">
+        <span class="rare-card-company">${role.company}</span>
+        <span class="rare-card-location">${role.location}</span>
+      </div>
+      <div class="rare-card-tags">
+        ${tagMarkup}
+      </div>
+      <div class="rare-card-footer">
+        ${sourceMarkup}
+      </div>
+    `;
+  }
+
   renderDates() {
     const dateStr = this.formatDate(this.summaryData.updatedAt);
 
@@ -356,6 +442,7 @@ class JobIntelligenceApp {
     this.renderRegions();
     this.renderRolesTable();
     this.renderInsights();
+    this.renderRareJobs();
   }
 
   setupEventListeners() {
