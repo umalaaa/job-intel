@@ -5,36 +5,26 @@
   },
   "updatedAt": "2026-01-17",
   "regions": [
-    "Canada",
-    "Remote"
+    "Canada"
   ],
-  "totalPostings": 65,
+  "totalPostings": 17,
   "growthRate": 0.0,
   "topSkills": [
     {
-      "name": "Data",
-      "count": 17,
-      "change": 0.0
-    },
-    {
       "name": "Security",
-      "count": 2,
+      "count": 1,
       "change": 0.0
     },
     {
-      "name": "Machine Learning",
+      "name": "Data",
       "count": 1,
       "change": 0.0
     }
   ],
   "innovations": [
     {
-      "name": "AI",
-      "count": 4
-    },
-    {
       "name": "Cybersecurity",
-      "count": 3
+      "count": 1
     }
   ],
   "insights": [

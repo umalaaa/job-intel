@@ -2,217 +2,163 @@
   "updatedAt": "2026-01-17",
   "rareRoles": [
     {
-      "role": "531,000+ Remote Work jobs (31,058 new)",
-      "company": "Unknown",
-      "location": "Remote",
-      "salary": "531,000+ Remote Work jobs (31,058 new) This button displays the currently selected search type. When expanded it provides a list of search options that will switch the search inputs to match the current selection.Create job alert. Get email updates for new Remote Work jobs in Worldwide.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.linkedin.com/jobs/remote-work-jobs-worldwide?position=1&pageNum=0"
-    },
-    {
-      "role": "222,000+ jobs in Canada",
-      "company": "Unknown",
+      "role": "Job Opportunities - Available positions",
+      "company": "the U.S. Mission",
       "location": "Canada",
-      "salary": "222,000+ jobs in Canada Leverage your professional network, and get hired. New Canada jobs added daily.When expanded it provides a list of search options that will switch the search inputs to match the current selection.",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://www.linkedin.com/jobs/jobs-in-canada"
+      "url": "https://ca.usembassy.gov/jobs/"
     },
     {
-      "role": "Careerjet.ca",
-      "company": "Jobs & Careers in Canada",
-      "location": "Canada",
-      "salary": "Careerjet.ca - Jobs & Careers in Canada Careerjet.ca - jobs search engine for Canada . Search jobs from more than ten thousands of web sites.99,581 jobs published in Canada . Upload your resume. Find your dream job with Careerjet.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.careerjet.ca/"
-    },
-    {
-      "role": "95,879 Remote Jobs",
-      "company": "Himalayas",
-      "location": "Remote",
-      "salary": "95,879 Remote Jobs | Himalayas Find your dream remote job . Create a profile and we'll match you with relevant remote jobs for free. Share your job search status. Showcase your skills beyond a resume. Get discovered by top companies.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://himalayas.app/jobs"
-    },
-    {
-      "role": "83190+ Full Time Jobs in Canada",
-      "company": "Vacancies Oct 2025",
-      "location": "Canada",
-      "salary": "83190+ Full Time Jobs in Canada - Vacancies Oct 2025 Explore top opportunities and apply today at Dr. Job to advance your career in Canada !Whether its applications managed services MSP MSSP data management advanced data analytics ERP CRM or pioneering AI solutions our seasoned team stands ready to architect and",
-      "trend": "up",
-      "skills": [
-        "Data"
-      ],
-      "source": "tavily",
-      "url": "https://www.drjobpro.com/canada/full-time-jobs"
-    },
-    {
-      "role": "View 73,547 job postings near various occupations on Job Bank...",
+      "role": "Job Bank",
       "company": "Unknown",
       "location": "Canada",
-      "salary": "View 73,547 job postings near various occupations on Job Bank... Current location.To add a job posting to your favourites, you need a Job Bank account. Sign in or sign up now!",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch/"
+      "url": ""
     },
     {
-      "role": "Available jobs",
-      "company": "Search",
-      "location": "Canada",
-      "salary": "Available jobs - Search View 50530 job postings near various occupations on Job Bank, Canada's one-stop job board.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch"
-    },
-    {
-      "role": "Canada Welcomed More Than 32,000 Tech Workers Over the Past 12...",
+      "role": "Census jobs",
       "company": "Unknown",
       "location": "Canada",
-      "salary": "Canada Welcomed More Than 32,000 Tech Workers Over the Past 12... KITCHENER, Ont., - July 11, 2023 - The Technology Councils of North America (TECNA) and Canada ’s Tech Network (CTN) today released “ Tech Workforce Trends: The Migration of Tech Workers and Tech Jobs Since The Pandemic",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://members.tecna.org/news/Details/canada-welcomed-more-than-32-000-tech-workers-over-the-past-12-months-report-finds-175229"
-    },
-    {
-      "role": "Co-operative Education",
-      "company": "Okanagan College",
-      "location": "Canada",
-      "salary": "Co-operative Education | Okanagan College Jobpostings Canada . Ranked one of the top 30 student job sites on the Internet.JobGurus was founded in 2006 and currently pulls job postings from 6000 sources Canada wide- providing its users with the most comprehensive search available. The site is free of charge for job seekers.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.okanagancollege.ca/careers-hub/co-op"
-    },
-    {
-      "role": "6,000+ Data Engineer jobs in Canada (481 new)",
-      "company": "LinkedIn",
-      "location": "Canada",
-      "salary": "6,000+ Data Engineer jobs in Canada (481 new) - LinkedIn Today’s top 6,000+ Data Engineer jobs in Canada . Leverage your professional network, and get hired. New Data Engineer jobs added daily.",
+      "salary": "19-20",
       "trend": "up",
       "skills": [
         "Data"
       ],
       "source": "tavily",
-      "url": "https://ca.linkedin.com/jobs/data-engineer-jobs"
+      "url": "https://www.census.gc.ca/en/jobs"
     },
     {
-      "role": "National Research Council Canada",
-      "company": "Jobs available now",
+      "role": "waiter/waitress",
+      "company": "Beresford, NB",
       "location": "Canada",
-      "salary": "National Research Council Canada – Jobs available now National Research Council Canada - Jobs available now ; Research Officer, Applied Cryptography · Research Officer, Applied Cryptography Bilingual 16 Jan 2026.",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://recruitment-recrutement.nrc-cnrc.gc.ca/go/All-Jobs/2320717/"
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36507279?source=searchresults"
     },
     {
-      "role": "105 data engineering jobs in Canada, January 2026",
-      "company": "Glassdoor",
+      "role": "picker, fruit or vegetable",
+      "company": "Sturgeon Falls, ON",
       "location": "Canada",
-      "salary": "105 data engineering jobs in Canada, January 2026 | Glassdoor People who searched for jobs in Canada also searched for modeling engineer , analytics engineer , perl developer, datastage developer, database administrator, machine learning scientist, etl developer, data warehouse manager, datawarehouse developer, etl tester. If you're getting few results, try a more general search term. If you're getting irrelevant result, try a more narrow and specific term.",
-      "trend": "up",
-      "skills": [
-        "Data"
-      ],
-      "source": "tavily",
-      "url": "https://www.glassdoor.ca/Job/canadá-data-engineering-jobs-SRCH_IL.0,6_IN3_KO7,23.htm"
-    },
-    {
-      "role": "Urgent! Data engineer jobs in Canada",
-      "company": "January 2026 (with ...",
-      "location": "Canada",
-      "salary": "Urgent! Data engineer jobs in Canada - January 2026 (with ... Search and apply for the latest Data engineer jobs in Canada. Verified employers. Competitive salary. Full-time, temporary, and part-time jobs . Job email alerts. Free, fast and easy way find a job of 91.000+ postings in Canada and other big cities in Canada .",
-      "trend": "up",
-      "skills": [
-        "Data"
-      ],
-      "source": "tavily",
-      "url": "https://ca.jooble.org/jobs-data-engineer/Canada"
-    },
-    {
-      "role": "Current Recruitment 2026",
-      "company": "Govt jobs in maharashtra",
-      "location": "Canada",
-      "salary": "Current Recruitment 2026 | Govt jobs in maharashtra Some other job categories include Technicians, Supervisor, Administration and Management, Professor, Nurses, Clerk, Computer Operator, Doctor, Manager, Research, Data Entry Operator, Scientists, Finance/Accounts, etc. Current Recruitment 2026 | Latest Government Jobs",
-      "trend": "up",
-      "skills": [
-        "Data"
-      ],
-      "source": "tavily",
-      "url": "https://majhinaukri.in/current-recruitment/"
-    },
-    {
-      "role": "Remote Jobs (January 2026)",
-      "company": "Arc",
-      "location": "Remote",
-      "salary": "Remote Jobs (January 2026) - Arc Explore top remote jobs in engineering , design, and marketing at global tech companies. From freelance to full-time roles, find your perfect remote job faster with Arc.",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://arc.dev/remote-jobs?jobLevels=junior"
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/35209367?source=searchresults"
     },
     {
-      "role": "Government of Canada jobs",
+      "role": "sandwich maker",
+      "company": "Canning, NS",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36511797?source=searchresults"
+    },
+    {
+      "role": "Jobs and the workplace",
       "company": "Canada .ca",
       "location": "Canada",
-      "salary": "Government of Canada jobs - Canada .ca Government of Canada jobs . Opportunities to work for the federal government.GC Jobs will be unavailable Saturday, March 15, 2025, from 9 am to 12 pm (EDT). During this time, you will not be able to search or apply for jobs , or take online tests. Thank you for your understanding.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.canada.ca/en/services/jobs/opportunities/government.html"
-    },
-    {
-      "role": "Digital giants calling Toronto home brings a welcomed...",
-      "company": "BetaKit",
-      "location": "Canada",
-      "salary": "Digital giants calling Toronto home brings a welcomed... | BetaKit Science and technology jobs comprise 34 percent of the current Canadian workforce, and roughly over 1.8 million Canadians work in the digital economy, which is predicted to grow to two million by 2023.",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://betakit.com/digital-giants-calling-toronto-home-brings-a-welcomed-competitive-edge-to-our-tech-ecosystem/"
-    },
-    {
-      "role": "Senior Data Engineer",
-      "company": "Mapyourproperty – Djinni",
-      "location": "Remote",
-      "salary": "Senior Data Engineer at Mapyourproperty – Djinni Senior Data Engineer . Employee Status: Full-time, Permanent, Remote. Why MapYourProperty?The job ad is no longer active Job unpublished on 12 June 2022. Look at the current jobs Data Engineer →.",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "Data"
+        "Security"
       ],
       "source": "tavily",
-      "url": "https://djinni.co/jobs/420436-senior-data-engineer/"
+      "url": "https://www.canada.ca/en/services/jobs.html"
     },
     {
-      "role": "Find your National Occupational Classification (NOC)",
+      "role": "About the Job Bank program",
       "company": "Canada .ca",
       "location": "Canada",
-      "salary": "Find your National Occupational Classification (NOC) - Canada .ca Français fr. Government of Canada / Gouvernement du Canada .We use the 2021 National Occupational Classification (NOC) system to identify and categorize jobs (occupations) based on the training, education, experience and responsibilities (TEER) they require.",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/find-national-occupation-code.html"
+      "url": "https://www.canada.ca/en/employment-social-development/programs/job-bank.html"
     },
     {
-      "role": "DataAnnotation",
-      "company": "Your New Remote Job",
-      "location": "Remote",
-      "salary": "DataAnnotation | Your New Remote Job 1. Create an account. We're currently accepting folks from the US, Canada , UK, Ireland, New Zealand, and Australia.Are you a developer? Make $1,600+ a week by coding from home. Flexible and remote work on your own terms.",
+      "role": "Job opportunities",
+      "company": "inspection. canada .ca",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [],
       "source": "tavily",
-      "url": "https://www.dataannotation.tech/"
+      "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities"
+    },
+    {
+      "role": "Jobs",
+      "company": "CDS - Canadian Digital Service",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://digital.canada.ca/jobs"
+    },
+    {
+      "role": "Temporary Foreign Workers Search",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?fsrc=32"
+    },
+    {
+      "role": "All Current Opportunities",
+      "company": "Canada Post Jobs",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://jobs.canadapost.ca/go/Canada-Post-All-Current-Opportunities/2319117/"
+    },
+    {
+      "role": "Apply to 93% of K-12 Schools in Canada",
+      "company": "ApplyToEducation",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.applytoeducation.com/"
+    },
+    {
+      "role": "Join Air Canada: Explore Careers and Job Opportunities",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://careers.aircanada.com/"
     }
   ],
-  "weirdRoles": []
+  "weirdRoles": [
+    {
+      "role": "All Current Opportunities",
+      "company": "Canada Post Jobs",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://jobs.canadapost.ca/go/Canada-Post-All-Current-Opportunities/2319117/",
+      "weirdTags": [
+        "Policy"
+      ]
+    }
+  ]
 }

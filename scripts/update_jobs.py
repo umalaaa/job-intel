@@ -39,6 +39,50 @@ BLOCKLIST_DOMAINS = [
     "drjobpro",
     "remoteok",
     "remotive",
+    "ziprecruiter",
+    "simplyhired",
+    "craigslist",
+    "snagajob",
+    "monster",
+]
+
+JOB_URL_KEYWORDS = [
+    "/jobs",
+    "/job",
+    "careers",
+    "career",
+    "opening",
+    "openings",
+    "position",
+    "positions",
+    "vacancy",
+    "apply",
+]
+
+CANADA_HINTS = [
+    "canada",
+    "ontario",
+    "quebec",
+    "alberta",
+    "british columbia",
+    "manitoba",
+    "saskatchewan",
+    "nova scotia",
+    "new brunswick",
+    "newfoundland",
+    "labrador",
+    "prince edward island",
+    "pei",
+    "northwest territories",
+    "nunavut",
+    "yukon",
+    "toronto",
+    "vancouver",
+    "montreal",
+    "ottawa",
+    "calgary",
+    "edmonton",
+    "winnipeg",
 ]
 
 SKILL_KEYWORDS = {
@@ -134,6 +178,24 @@ def http_post(url: str, payload: Dict) -> bytes:
 
 def parse_salary_range(raw: str) -> Tuple[Optional[int], Optional[int], Optional[str]]:
     if not raw:
+        return None, None, None
+    lowered = raw.lower()
+    salary_indicators = [
+        "$",
+        "salary",
+        "per hour",
+        "hourly",
+        "per year",
+        "annually",
+        "annual",
+        "/hr",
+        "/hour",
+        "/year",
+        "hour",
+        "yr",
+        "year",
+    ]
+    if not any(indicator in lowered for indicator in salary_indicators):
         return None, None, None
     cleaned = raw.replace(",", "")
     numbers = [int(n) for n in re.findall(r"\d+", cleaned)]
@@ -282,14 +344,29 @@ def fetch_tavily_jobs(
             title_text = (result.get("title") or "").strip()
             content = (result.get("content") or "").strip()
             url = (result.get("url") or "").strip()
+            if url:
+                lowered_url = url.lower()
+                if any(blocked in lowered_url for blocked in BLOCKLIST_DOMAINS):
+                    continue
             if not title_text and not content:
                 continue
             if not is_job_result(title_text, content):
+                continue
+            combined_text = f"{title_text} {content} {url}".lower()
+            if url:
+                lowered_url = url.lower()
+                if not any(keyword in lowered_url for keyword in JOB_URL_KEYWORDS):
+                    continue
+            if "remote" not in combined_text and not any(
+                hint in combined_text for hint in CANADA_HINTS
+            ):
                 continue
             title, company = parse_title_company(title_text)
             salary_min, salary_max, salary_text = parse_salary_range(
                 f"{title_text} {content}"
             )
+            if salary_text and len(salary_text) > 200:
+                salary_text = None
             tags = tokenize(f"{title_text} {content}")
             ext_id = build_external_id(url or title_text, title)
             if ext_id in seen:
