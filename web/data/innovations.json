@@ -2,183 +2,103 @@
   "updatedAt": "2026-01-17",
   "categories": [
     {
-      "name": "Cybersecurity",
-      "count": 23
-    },
-    {
       "name": "AI",
-      "count": 17
+      "count": 4
     },
     {
-      "name": "Web3",
-      "count": 5
-    },
-    {
-      "name": "Machine Learning",
+      "name": "Cybersecurity",
       "count": 3
-    },
-    {
-      "name": "Biotech",
-      "count": 1
-    },
-    {
-      "name": "Robotics",
-      "count": 1
     }
   ],
   "topRoles": [
     {
-      "role": "Software Engineer Agent Infrastructure",
-      "company": "OpenAI",
-      "location": "Remote",
-      "salary": "255000-405000",
-      "trend": "up",
-      "skills": [
-        "Cloud",
-        "Security"
-      ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-agent-infrastructure-openai-1129438",
-      "innovations": [
-        "Cybersecurity"
-      ]
-    },
-    {
-      "role": "Solutions Engineer Commercial",
-      "company": "Tailscale",
+      "role": "83190+ Full Time Jobs in Canada",
+      "company": "Vacancies Oct 2025",
       "location": "Canada",
-      "salary": "201000-268000",
+      "salary": "83190+ Full Time Jobs in Canada - Vacancies Oct 2025 Explore top opportunities and apply today at Dr. Job to advance your career in Canada !Whether its applications managed services MSP MSSP data management advanced data analytics ERP CRM or pioneering AI solutions our seasoned team stands ready to architect and",
+      "trend": "up",
+      "skills": [
+        "Data"
+      ],
+      "source": "tavily",
+      "url": "https://www.drjobpro.com/canada/full-time-jobs",
+      "innovations": [
+        "AI"
+      ]
+    },
+    {
+      "role": "760 Security Technician jobs in Canada",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "760 Security Technician jobs in Canada This button displays the currently selected search type. When expanded it provides a list of search options that will switch the search inputs to match the current selection.Get notified about new Security Technician jobs in Canada . Sign in to create job alert.",
       "trend": "up",
       "skills": [
         "Security"
       ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-solutions-engineer-commercial-tailscale-1129514",
+      "source": "tavily",
+      "url": "https://ca.linkedin.com/jobs/security-technician-jobs",
       "innovations": [
         "Cybersecurity"
       ]
     },
     {
-      "role": "Senior Staff Machine Learning Engineer",
-      "company": "Cresta",
-      "location": "US, Canada",
-      "salary": "120000-180000",
+      "role": "Discover the latest and greatest AI, ML, Data science jobs .",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "Discover the latest and greatest AI, ML, Data science jobs . Niche job board for anyone looking for AI, ML, Data Science jobs .The #1 Job Board for finding your next AI, data science, machine learning, deep learning job .",
       "trend": "up",
       "skills": [
+        "Data",
         "Machine Learning"
       ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-senior-staff-machine-learning-engineer-cresta-1129468",
+      "source": "tavily",
+      "url": "https://datasciencejobs.com/",
       "innovations": [
-        "Machine Learning"
+        "AI"
       ]
     },
     {
-      "role": "Staff Software Engineer Crypto",
-      "company": "Robinhood",
-      "location": "New York",
-      "salary": "120000-180000",
+      "role": "Jobs in national security and defence",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "Jobs in national security and defence Canadian Armed Forces jobs. Find a job in the military. Career options, pay and benefits. Talk to a recruiter near you.",
       "trend": "up",
       "skills": [
         "Security"
       ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-crypto-robinhood-1129455",
+      "source": "tavily",
+      "url": "https://onlineservices-servicesenligne.cic.gc.ca/c2c/exit?logout=true&uri=https://www.canada.ca/en/services/defence/jobs.html",
       "innovations": [
         "Cybersecurity"
       ]
     },
     {
-      "role": "DevOps Lead Engineer",
-      "company": "Envoy Global, Inc.",
-      "location": "Chicago IL",
-      "salary": "100000-150000",
+      "role": "Techjobs .ca",
+      "company": "Find Jobs That Want You",
+      "location": "Canada",
+      "salary": "Techjobs .ca | Find Jobs That Want You Techjobs .ca is a job board for tech jobs in Canada . Browse Techjobs .ca by city to find the job that works for you.Upload your resume and let our AI find jobs where you'll have the best chance of getting hired.",
       "trend": "up",
-      "skills": [
-        "Cloud",
-        "DevOps",
-        "Security"
-      ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-devops-lead-engineer-envoy-global-inc-1129539",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.techjobs.ca/",
       "innovations": [
-        "Cybersecurity"
+        "AI"
       ]
     },
     {
-      "role": "Copy of Senior AI ML Engineer Applied Machine Learning",
-      "company": "Trase Systems",
-      "location": "USA",
-      "salary": "100000-150000",
+      "role": "Coursera",
+      "company": "Degrees, Certificates, & Free Online Courses",
+      "location": "Canada",
+      "salary": "Coursera | Degrees, Certificates, & Free Online Courses Coursera offers job -aligned Professional Certificates and Specializations designed in collaboration with employers and universities to help learners qualify for roles in fields such as cybersecurity, UX, data analytics, AI, and business.",
       "trend": "up",
       "skills": [
-        "Machine Learning"
+        "Data"
       ],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-copy-of-senior-ai-ml-engineer-applied-machine-learning-trase-systems-1129443",
+      "source": "tavily",
+      "url": "https://www.coursera.org/",
       "innovations": [
         "AI",
-        "Machine Learning"
-      ]
-    },
-    {
-      "role": "Performance Marketing Manager GalaxyOne",
-      "company": "Galaxy Digital Services",
-      "location": "Remote",
-      "salary": "60000-120000",
-      "trend": "up",
-      "skills": [],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-performance-marketing-manager-galaxyone-galaxy-digital-services-1129485",
-      "innovations": [
-        "Web3"
-      ]
-    },
-    {
-      "role": "Junior Crypto Analyst & Trader",
-      "company": "WhiteBridge-Ltd",
-      "location": "Remote",
-      "salary": "70000-90000",
-      "trend": "up",
-      "skills": [],
-      "source": "remoteok",
-      "url": "https://remoteOK.com/remote-jobs/remote-junior-crypto-analyst-trader-whitebridge-ltd-1129461",
-      "innovations": [
-        "Web3"
-      ]
-    },
-    {
-      "role": "Chief Operating Officer",
-      "company": "Shah & Associates CPAs PA",
-      "location": "USA",
-      "salary": "$190k-$200k",
-      "trend": "up",
-      "skills": [
-        "Machine Learning"
-      ],
-      "source": "remotive",
-      "url": "https://remotive.com/remote-jobs/sales-business/chief-operating-officer-2088514",
-      "innovations": [
-        "AI"
-      ]
-    },
-    {
-      "role": "Tech Lead Full-Stack Rails Engineer",
-      "company": "Mitre Media",
-      "location": "USA, Canada, USA timezones",
-      "salary": "$170k - $200k",
-      "trend": "up",
-      "skills": [
-        "Docker",
-        "JavaScript",
-        "Kubernetes",
-        "Machine Learning",
-        "React"
-      ],
-      "source": "remotive",
-      "url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746",
-      "innovations": [
-        "AI"
+        "Cybersecurity"
       ]
     }
   ]

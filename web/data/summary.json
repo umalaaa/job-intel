@@ -5,131 +5,67 @@
   },
   "updatedAt": "2026-01-17",
   "regions": [
-    "Remote",
-    "Worldwide",
-    "USA",
-    "San Francisco",
-    "Novato, CA"
+    "Canada",
+    "Remote"
   ],
-  "totalPostings": 164,
-  "growthRate": 54.72,
+  "totalPostings": 65,
+  "growthRate": 0.0,
   "topSkills": [
     {
-      "name": "Cloud",
-      "count": 31,
+      "name": "Data",
+      "count": 17,
       "change": 0.0
     },
     {
       "name": "Security",
-      "count": 23,
+      "count": 2,
       "change": 0.0
     },
     {
       "name": "Machine Learning",
-      "count": 13,
-      "change": 0.0
-    },
-    {
-      "name": "DevOps",
-      "count": 9,
-      "change": 0.0
-    },
-    {
-      "name": "Data",
-      "count": 8,
-      "change": 0.0
-    },
-    {
-      "name": "Docker",
-      "count": 8,
-      "change": 0.0
-    },
-    {
-      "name": "Python",
-      "count": 7,
-      "change": 0.0
-    },
-    {
-      "name": "Go",
-      "count": 7,
-      "change": 0.0
-    },
-    {
-      "name": "React",
-      "count": 4,
-      "change": 0.0
-    },
-    {
-      "name": "Java",
-      "count": 4,
+      "count": 1,
       "change": 0.0
     }
   ],
   "innovations": [
     {
-      "name": "Cybersecurity",
-      "count": 23
-    },
-    {
       "name": "AI",
-      "count": 17
+      "count": 4
     },
     {
-      "name": "Web3",
-      "count": 5
-    },
-    {
-      "name": "Machine Learning",
+      "name": "Cybersecurity",
       "count": 3
-    },
-    {
-      "name": "Biotech",
-      "count": 1
-    },
-    {
-      "name": "Robotics",
-      "count": 1
     }
   ],
   "insights": [
     {
       "title": {
-        "en": "Remote roles lead",
-        "zh": "远程职位领先"
+        "en": "Current Canada focus",
+        "zh": "聚焦加拿大当前岗位"
       },
       "description": {
-        "en": "Remote-first sources dominate the high-paying list.",
-        "zh": "高薪职位主要来自远程来源。"
+        "en": "Tavily search aggregates current Canada job listings.",
+        "zh": "Tavily 搜索聚合加拿大当前岗位。"
       },
-      "icon": "🌍"
+      "icon": "🇨🇦"
     },
     {
       "title": {
-        "en": "Canada demand",
-        "zh": "加拿大需求"
+        "en": "Remote demand",
+        "zh": "远程需求"
       },
       "description": {
-        "en": "Job Bank data captures Canadian postings above the salary threshold.",
-        "zh": "官方数据收录加拿大高薪岗位。"
+        "en": "Remote postings are included in the search feed.",
+        "zh": "搜索结果包含远程岗位。"
       },
-      "icon": "🇨🇦"
+      "icon": "🌍"
     }
   ],
   "sources": [
     {
-      "name": "Remotive",
-      "url": "https://remotive.com",
-      "note": "Remote jobs via Remotive API"
-    },
-    {
-      "name": "RemoteOK",
-      "url": "https://remoteok.com",
-      "note": "Remote jobs via RemoteOK JSON feed"
-    },
-    {
-      "name": "Job Bank",
-      "url": "https://open.canada.ca/data/en/dataset/ea639e28-c0fc-48bf-b5dd-b8899bd43072",
-      "note": "Canada Job Bank open data"
+      "name": "Tavily",
+      "url": "https://tavily.com",
+      "note": "Current jobs via Tavily Search API"
     }
   ]
 }
