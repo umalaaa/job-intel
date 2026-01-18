@@ -1,25 +1,95 @@
 {
-  "updatedAt": "2026-01-17",
+  "updatedAt": "2026-01-18",
   "categories": [
     {
+      "name": "Applied AI",
+      "count": 18
+    },
+    {
       "name": "Cybersecurity",
-      "count": 1
+      "count": 14
+    },
+    {
+      "name": "Digital Health",
+      "count": 11
+    },
+    {
+      "name": "Climate Tech",
+      "count": 9
+    },
+    {
+      "name": "Fintech",
+      "count": 8
     }
   ],
   "topRoles": [
     {
-      "role": "Jobs and the workplace",
-      "company": "Canada .ca",
-      "location": "Canada",
-      "salary": "N/A",
+      "role": "AI Enablement Lead",
+      "company": "Ontario Health",
+      "location": "Toronto, ON",
+      "salary": "CA$130k–165k",
       "trend": "up",
       "skills": [
-        "Security"
+        "AI Strategy",
+        "Change Mgmt",
+        "Data Governance"
       ],
-      "source": "tavily",
-      "url": "https://www.canada.ca/en/services/jobs.html",
+      "source": "career site",
+      "url": "https://www.ontariohealth.ca/careers",
+      "innovations": [
+        "Applied AI",
+        "Digital Health"
+      ]
+    },
+    {
+      "role": "Security Product Manager",
+      "company": "OpenText",
+      "location": "Waterloo, ON",
+      "salary": "CA$120k–160k",
+      "trend": "up",
+      "skills": [
+        "Product Strategy",
+        "Zero Trust",
+        "Roadmapping"
+      ],
+      "source": "career site",
+      "url": "https://www.opentext.com/about/careers",
       "innovations": [
         "Cybersecurity"
+      ]
+    },
+    {
+      "role": "Sustainability Analytics Lead",
+      "company": "Brookfield",
+      "location": "Toronto, ON",
+      "salary": "CA$135k–175k",
+      "trend": "stable",
+      "skills": [
+        "ESG",
+        "Data Analytics",
+        "Reporting"
+      ],
+      "source": "career site",
+      "url": "https://careers.brookfield.com/",
+      "innovations": [
+        "Climate Tech"
+      ]
+    },
+    {
+      "role": "Principal Platform Engineer",
+      "company": "Nuvei",
+      "location": "Montreal, QC",
+      "salary": "CA$150k–190k",
+      "trend": "up",
+      "skills": [
+        "Distributed Systems",
+        "Kubernetes",
+        "SRE"
+      ],
+      "source": "career site",
+      "url": "https://www.nuvei.com/careers/",
+      "innovations": [
+        "Fintech"
       ]
     }
   ]

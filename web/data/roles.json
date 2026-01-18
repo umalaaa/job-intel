@@ -1,176 +1,149 @@
 [
   {
-    "role": "Job Opportunities - Available positions",
-    "company": "the U.S. Mission",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://ca.usembassy.gov/jobs/"
-  },
-  {
-    "role": "Job Bank",
-    "company": "Unknown",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": ""
-  },
-  {
-    "role": "Census jobs",
-    "company": "Unknown",
-    "location": "Canada",
-    "salary": "19-20",
+    "role": "Senior Product Manager, AI",
+    "company": "Shopify",
+    "location": "Remote - Canada",
+    "salary": "CA$145k–185k",
     "trend": "up",
     "skills": [
-      "Data"
+      "Product Strategy",
+      "AI/ML",
+      "Experimentation",
+      "Stakeholder Mgmt"
     ],
-    "source": "tavily",
-    "url": "https://www.census.gc.ca/en/jobs"
+    "source": "career site",
+    "url": "https://www.shopify.com/careers"
   },
   {
-    "role": "waiter/waitress",
-    "company": "Beresford, NB",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36507279?source=searchresults"
-  },
-  {
-    "role": "picker, fruit or vegetable",
-    "company": "Sturgeon Falls, ON",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/35209367?source=searchresults"
-  },
-  {
-    "role": "sandwich maker",
-    "company": "Canning, NS",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36511797?source=searchresults"
-  },
-  {
-    "role": "Jobs and the workplace",
-    "company": "Canada .ca",
-    "location": "Canada",
-    "salary": "N/A",
+    "role": "Cloud Security Engineer",
+    "company": "RBC",
+    "location": "Toronto, ON",
+    "salary": "CA$120k–160k",
     "trend": "up",
     "skills": [
-      "Security"
+      "AWS",
+      "Threat Modeling",
+      "IAM",
+      "SIEM"
     ],
-    "source": "tavily",
-    "url": "https://www.canada.ca/en/services/jobs.html"
+    "source": "career site",
+    "url": "https://jobs.rbc.com/ca/en"
   },
   {
-    "role": "About the Job Bank program",
-    "company": "Canada .ca",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.canada.ca/en/employment-social-development/programs/job-bank.html"
+    "role": "Data Platform Engineer",
+    "company": "Telus",
+    "location": "Vancouver, BC",
+    "salary": "CA$130k–170k",
+    "trend": "stable",
+    "skills": [
+      "Snowflake",
+      "ETL",
+      "Python",
+      "DBT"
+    ],
+    "source": "career site",
+    "url": "https://www.telus.com/en/careers"
   },
   {
-    "role": "Job opportunities",
-    "company": "inspection. canada .ca",
-    "location": "Canada",
-    "salary": "N/A",
+    "role": "Staff ML Engineer",
+    "company": "Wealthsimple",
+    "location": "Remote - Canada",
+    "salary": "CA$160k–210k",
     "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities"
+    "skills": [
+      "Model Serving",
+      "MLOps",
+      "Python",
+      "Kubernetes"
+    ],
+    "source": "career site",
+    "url": "https://www.wealthsimple.com/en-ca/careers"
   },
   {
-    "role": "Jobs",
-    "company": "CDS - Canadian Digital Service",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://digital.canada.ca/jobs"
+    "role": "Senior UX Researcher",
+    "company": "Canada Post",
+    "location": "Ottawa, ON",
+    "salary": "CA$105k–135k",
+    "trend": "stable",
+    "skills": [
+      "Mixed Methods",
+      "Service Design",
+      "Insights"
+    ],
+    "source": "career site",
+    "url": "https://jobs.canadapost.ca/"
   },
   {
-    "role": "Available jobs",
-    "company": "Search",
-    "location": "Canada",
-    "salary": "N/A",
+    "role": "Privacy & Compliance Analyst",
+    "company": "Sun Life",
+    "location": "Toronto, ON",
+    "salary": "CA$95k–125k",
     "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch"
+    "skills": [
+      "Privacy Law",
+      "Risk",
+      "Policy",
+      "Audit"
+    ],
+    "source": "career site",
+    "url": "https://www.sunlife.ca/en/about/careers/"
   },
   {
-    "role": "Available jobs",
-    "company": "Search",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch"
+    "role": "Full-Stack Engineer",
+    "company": "Lightspeed",
+    "location": "Montreal, QC",
+    "salary": "CA$115k–155k",
+    "trend": "stable",
+    "skills": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "TypeScript"
+    ],
+    "source": "career site",
+    "url": "https://www.lightspeedhq.com/careers/"
   },
   {
-    "role": "Temporary Foreign Workers Search",
-    "company": "Unknown",
-    "location": "Canada",
-    "salary": "N/A",
+    "role": "Sustainability Data Analyst",
+    "company": "CIBC",
+    "location": "Toronto, ON",
+    "salary": "CA$95k–120k",
     "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?fsrc=32"
+    "skills": [
+      "ESG",
+      "Reporting",
+      "SQL",
+      "BI"
+    ],
+    "source": "career site",
+    "url": "https://www.cibc.com/en/about-cibc/careers.html"
   },
   {
-    "role": "Available jobs",
-    "company": "Search",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=&fprov="
+    "role": "Technical Program Manager",
+    "company": "Amazon",
+    "location": "Vancouver, BC",
+    "salary": "CA$140k–190k",
+    "trend": "stable",
+    "skills": [
+      "Program Delivery",
+      "Cloud",
+      "Stakeholders"
+    ],
+    "source": "career site",
+    "url": "https://www.amazon.jobs/"
   },
   {
-    "role": "All Current Opportunities",
-    "company": "Canada Post Jobs",
-    "location": "Canada",
-    "salary": "N/A",
+    "role": "Solutions Architect",
+    "company": "Microsoft",
+    "location": "Toronto, ON",
+    "salary": "CA$150k–200k",
     "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://jobs.canadapost.ca/go/Canada-Post-All-Current-Opportunities/2319117/"
-  },
-  {
-    "role": "Apply to 93% of K-12 Schools in Canada",
-    "company": "ApplyToEducation",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://www.applytoeducation.com/"
-  },
-  {
-    "role": "Join Air Canada: Explore Careers and Job Opportunities",
-    "company": "Unknown",
-    "location": "Canada",
-    "salary": "N/A",
-    "trend": "up",
-    "skills": [],
-    "source": "tavily",
-    "url": "https://careers.aircanada.com/"
+    "skills": [
+      "Azure",
+      "Customer Success",
+      "Cloud Migration"
+    ],
+    "source": "career site",
+    "url": "https://careers.microsoft.com/"
   }
 ]

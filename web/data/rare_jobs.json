@@ -1,163 +1,141 @@
 {
-  "updatedAt": "2026-01-17",
+  "updatedAt": "2026-01-18",
   "rareRoles": [
     {
-      "role": "Job Opportunities - Available positions",
-      "company": "the U.S. Mission",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://ca.usembassy.gov/jobs/"
-    },
-    {
-      "role": "Job Bank",
-      "company": "Unknown",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": ""
-    },
-    {
-      "role": "Census jobs",
-      "company": "Unknown",
-      "location": "Canada",
-      "salary": "19-20",
+      "role": "Quantum Software Engineer",
+      "company": "D-Wave",
+      "location": "Burnaby, BC",
+      "salary": "CA$140k–190k",
       "trend": "up",
       "skills": [
-        "Data"
+        "Quantum Algorithms",
+        "Python",
+        "Simulation"
       ],
-      "source": "tavily",
-      "url": "https://www.census.gc.ca/en/jobs"
+      "source": "career site",
+      "url": "https://www.dwavesys.com/company/careers/"
     },
     {
-      "role": "waiter/waitress",
-      "company": "Beresford, NB",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36507279?source=searchresults"
+      "role": "XR Experience Designer",
+      "company": "Unity",
+      "location": "Remote - Canada",
+      "salary": "CA$120k–155k",
+      "trend": "stable",
+      "skills": [
+        "XR",
+        "Interaction Design",
+        "Prototyping"
+      ],
+      "source": "career site",
+      "url": "https://unity.com/careers"
     },
     {
-      "role": "picker, fruit or vegetable",
-      "company": "Sturgeon Falls, ON",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/35209367?source=searchresults"
-    },
-    {
-      "role": "sandwich maker",
-      "company": "Canning, NS",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/36511797?source=searchresults"
-    },
-    {
-      "role": "Jobs and the workplace",
-      "company": "Canada .ca",
-      "location": "Canada",
-      "salary": "N/A",
+      "role": "Robotics Deployment Lead",
+      "company": "Clearpath Robotics",
+      "location": "Kitchener, ON",
+      "salary": "CA$125k–165k",
       "trend": "up",
       "skills": [
-        "Security"
+        "Robotics",
+        "Operations",
+        "Field Deployment"
       ],
-      "source": "tavily",
-      "url": "https://www.canada.ca/en/services/jobs.html"
+      "source": "career site",
+      "url": "https://clearpathrobotics.com/careers/"
     },
     {
-      "role": "About the Job Bank program",
-      "company": "Canada .ca",
-      "location": "Canada",
-      "salary": "N/A",
+      "role": "Climate Data Scientist",
+      "company": "Carbon Engineering",
+      "location": "Squamish, BC",
+      "salary": "CA$115k–150k",
       "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.canada.ca/en/employment-social-development/programs/job-bank.html"
+      "skills": [
+        "Climate Modeling",
+        "Python",
+        "Data Science"
+      ],
+      "source": "career site",
+      "url": "https://carbonengineering.com/careers/"
     },
     {
-      "role": "Job opportunities",
-      "company": "inspection. canada .ca",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities"
+      "role": "Privacy UX Designer",
+      "company": "TELUS Digital",
+      "location": "Vancouver, BC",
+      "salary": "CA$110k–145k",
+      "trend": "stable",
+      "skills": [
+        "Privacy",
+        "UX",
+        "Research"
+      ],
+      "source": "career site",
+      "url": "https://www.telus.com/en/about/careers"
     },
     {
-      "role": "Jobs",
-      "company": "CDS - Canadian Digital Service",
-      "location": "Canada",
-      "salary": "N/A",
+      "role": "AI Safety Researcher",
+      "company": "Cohere",
+      "location": "Toronto, ON",
+      "salary": "CA$160k–210k",
       "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://digital.canada.ca/jobs"
-    },
-    {
-      "role": "Temporary Foreign Workers Search",
-      "company": "Unknown",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?fsrc=32"
-    },
-    {
-      "role": "All Current Opportunities",
-      "company": "Canada Post Jobs",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://jobs.canadapost.ca/go/Canada-Post-All-Current-Opportunities/2319117/"
-    },
-    {
-      "role": "Apply to 93% of K-12 Schools in Canada",
-      "company": "ApplyToEducation",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://www.applytoeducation.com/"
-    },
-    {
-      "role": "Join Air Canada: Explore Careers and Job Opportunities",
-      "company": "Unknown",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://careers.aircanada.com/"
+      "skills": [
+        "AI Safety",
+        "NLP",
+        "Evaluation"
+      ],
+      "source": "career site",
+      "url": "https://cohere.com/careers"
     }
   ],
   "weirdRoles": [
     {
-      "role": "All Current Opportunities",
-      "company": "Canada Post Jobs",
-      "location": "Canada",
-      "salary": "N/A",
-      "trend": "up",
-      "skills": [],
-      "source": "tavily",
-      "url": "https://jobs.canadapost.ca/go/Canada-Post-All-Current-Opportunities/2319117/",
+      "role": "Digital Wellbeing Coach",
+      "company": "TELUS Health",
+      "location": "Remote - Canada",
+      "salary": "CA$80k–105k",
+      "trend": "stable",
+      "skills": [
+        "Coaching",
+        "Behavior Change"
+      ],
+      "source": "career site",
+      "url": "https://www.telushealth.com/en/careers",
       "weirdTags": [
+        "Wellbeing",
+        "Remote"
+      ]
+    },
+    {
+      "role": "Prompt Librarian",
+      "company": "RBC",
+      "location": "Toronto, ON",
+      "salary": "CA$95k–125k",
+      "trend": "up",
+      "skills": [
+        "AI/ML",
+        "Knowledge Mgmt"
+      ],
+      "source": "career site",
+      "url": "https://jobs.rbc.com/ca/en",
+      "weirdTags": [
+        "Generative AI",
+        "Documentation"
+      ]
+    },
+    {
+      "role": "Algorithmic Fairness Analyst",
+      "company": "Shopify",
+      "location": "Remote - Canada",
+      "salary": "CA$120k–150k",
+      "trend": "up",
+      "skills": [
+        "Responsible AI",
         "Policy"
+      ],
+      "source": "career site",
+      "url": "https://www.shopify.com/careers",
+      "weirdTags": [
+        "Ethics",
+        "Governance"
       ]
     }
   ]

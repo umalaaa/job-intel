@@ -1,61 +1,107 @@
 {
   "title": {
-    "en": "Job Market Intelligence Dashboard",
-    "zh": "就业市场情报仪表板"
+    "en": "Talent Market Intelligence Dashboard",
+    "zh": "人才市场情报仪表板"
   },
-  "updatedAt": "2026-01-17",
+  "updatedAt": "2026-01-18",
   "regions": [
-    "Canada"
+    "Canada",
+    "US Remote",
+    "Hybrid"
   ],
-  "totalPostings": 17,
-  "growthRate": 0.0,
+  "totalPostings": 248,
+  "growthRate": 6.4,
   "topSkills": [
     {
       "name": "Security",
-      "count": 1,
-      "change": 0.0
+      "count": 34,
+      "change": 4.2
     },
     {
-      "name": "Data",
-      "count": 1,
-      "change": 0.0
+      "name": "Data Analytics",
+      "count": 31,
+      "change": 3.5
+    },
+    {
+      "name": "Cloud",
+      "count": 28,
+      "change": 2.1
+    },
+    {
+      "name": "AI/ML",
+      "count": 24,
+      "change": 5.1
+    },
+    {
+      "name": "Product",
+      "count": 19,
+      "change": 1.4
+    },
+    {
+      "name": "Compliance",
+      "count": 16,
+      "change": -0.6
     }
   ],
   "innovations": [
     {
+      "name": "Applied AI",
+      "count": 18
+    },
+    {
       "name": "Cybersecurity",
-      "count": 1
+      "count": 14
+    },
+    {
+      "name": "Digital Health",
+      "count": 11
     }
   ],
   "insights": [
     {
       "title": {
-        "en": "Current Canada focus",
-        "zh": "聚焦加拿大当前岗位"
+        "en": "Security hiring remains resilient",
+        "zh": "安全相关岗位持续韧性"
       },
       "description": {
-        "en": "Tavily search aggregates current Canada job listings.",
-        "zh": "Tavily 搜索聚合加拿大当前岗位。"
+        "en": "Security and risk roles lead growth, driven by regulatory pressure and cloud adoption.",
+        "zh": "在监管与云化推动下，安全与风险岗位增长领先。"
       },
-      "icon": "🇨🇦"
+      "icon": "🛡️"
     },
     {
       "title": {
-        "en": "Remote demand",
-        "zh": "远程需求"
+        "en": "Remote-friendly roles stabilize",
+        "zh": "远程友好岗位趋稳"
       },
       "description": {
-        "en": "Remote postings are included in the search feed.",
-        "zh": "搜索结果包含远程岗位。"
+        "en": "Hybrid roles now outnumber fully remote openings for mid-senior talent.",
+        "zh": "对中高阶岗位而言，混合办公已超过全远程。"
       },
       "icon": "🌍"
+    },
+    {
+      "title": {
+        "en": "AI adoption shapes new job titles",
+        "zh": "AI 落地催生新岗位"
+      },
+      "description": {
+        "en": "Applied AI programs are creating roles in enablement, governance, and product.",
+        "zh": "应用型 AI 项目带来启用、治理与产品类岗位。"
+      },
+      "icon": "✨"
     }
   ],
   "sources": [
     {
-      "name": "Tavily",
-      "url": "https://tavily.com",
-      "note": "Current jobs via Tavily Search API"
+      "name": "Public Job Boards",
+      "url": "https://www.jobbank.gc.ca/jobsearch",
+      "note": "Weekly aggregation of public postings"
+    },
+    {
+      "name": "Employer Career Pages",
+      "url": "https://digital.canada.ca/jobs",
+      "note": "Select employer sites for priority roles"
     }
   ]
 }
