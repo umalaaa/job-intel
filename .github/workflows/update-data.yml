@@ -28,6 +28,10 @@ jobs:
           RARE_TITLE_MAX_FREQ: "1"
         run: |
           python scripts/update_jobs.py
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Commit updates
         run: |
           if git status --porcelain | grep -q "web/data/"; then
