@@ -19,7 +19,7 @@ LOG_DIR = os.path.join(BASE_DIR, "logs")
 
 TAVILY_URL = os.getenv(
     "TAVILY_URL",
-    "https://mcp.tavily.com/mcp/?tavilyApiKey=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",
+    "https://api.tavily.com/search",
 )
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
 TAVILY_MAX_RESULTS = int(os.getenv("TAVILY_MAX_RESULTS", "25"))
@@ -259,14 +259,14 @@ def ensure_dirs() -> None:
 
 
 def http_post(url: str, payload: Dict) -> bytes:
-    data = json.dumps(payload).encode("utf-8")
+    payload_with_key = {**payload, "api_key": TAVILY_API_KEY}
+    data = json.dumps(payload_with_key).encode("utf-8")
     req = urllib.request.Request(
         url,
         data=data,
         headers={
             "User-Agent": "job-intel-bot/1.0",
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {TAVILY_API_KEY}",
         },
         method="POST",
     )

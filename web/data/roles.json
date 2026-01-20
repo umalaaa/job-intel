@@ -1,149 +1,340 @@
 [
   {
-    "role": "Senior Product Manager, AI",
-    "company": "Shopify",
-    "location": "Remote - Canada",
-    "salary": "CA$145k–185k",
+    "role": "Available jobs",
+    "company": "Search",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/jobsearch"
+  },
+  {
+    "role": "View 73,547 job postings near various occupations on Job Bank...",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/jobsearch/"
+  },
+  {
+    "role": "Job opportunities",
+    "company": "inspection. canada .ca",
+    "location": "Canada",
+    "salary": "10-10",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities"
+  },
+  {
+    "role": "Available jobs",
+    "company": "Search",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=&locationstring=&locationparam=&fglo=1&sort=M"
+  },
+  {
+    "role": "Job opportunities: Global Affairs Canada",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.international.gc.ca/global-affairs-affaires-mondiales/corporate-ministere/contact-contactez/jobs-emplois.aspx?lang=eng"
+  },
+  {
+    "role": "Youth and student employment",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "http://www.gc.ca/en/services/jobs/opportunities/student.html"
+  },
+  {
+    "role": "Hiring Fill a position",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/employers"
+  },
+  {
+    "role": "Job Bank",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/home"
+  },
+  {
+    "role": "Recruit and hire",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/intro/recruitandhire"
+  },
+  {
+    "role": "Available jobs near Saint John (NB)",
+    "company": "Search",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?d=50&mid=22380&sort=M"
+  },
+  {
+    "role": "Temporary Foreign Workers",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/temporary-foreign-workers"
+  },
+  {
+    "role": "Jobs and the workplace",
+    "company": "Canada.ca",
+    "location": "Canada",
+    "salary": "N/A",
     "trend": "up",
     "skills": [
-      "Product Strategy",
-      "AI/ML",
-      "Experimentation",
-      "Stakeholder Mgmt"
+      "Security"
     ],
-    "source": "career site",
-    "url": "https://www.shopify.com/careers"
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/services/jobs.html"
   },
   {
-    "role": "Cloud Security Engineer",
-    "company": "RBC",
-    "location": "Toronto, ON",
-    "salary": "CA$120k–160k",
+    "role": "Job Bank – Job Search",
+    "company": "Canada.ca",
+    "location": "Canada",
+    "salary": "N/A",
     "trend": "up",
     "skills": [
-      "AWS",
-      "Threat Modeling",
-      "IAM",
-      "SIEM"
+      "Go"
     ],
-    "source": "career site",
-    "url": "https://jobs.rbc.com/ca/en"
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/mobile/job-bank-job-search.html"
   },
   {
-    "role": "Data Platform Engineer",
-    "company": "Telus",
-    "location": "Vancouver, BC",
-    "salary": "CA$130k–170k",
-    "trend": "stable",
-    "skills": [
-      "Snowflake",
-      "ETL",
-      "Python",
-      "DBT"
-    ],
-    "source": "career site",
-    "url": "https://www.telus.com/en/careers"
+    "role": "External and Internal Hiring",
+    "company": "Canada.ca",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/public-service-commission/services/staffing-assessment-tools-resources/human-resources-specialists-hiring-managers/advertise-job/external-internal-hiring.html"
   },
   {
-    "role": "Staff ML Engineer",
-    "company": "Wealthsimple",
-    "location": "Remote - Canada",
-    "salary": "CA$160k–210k",
+    "role": "About the Job Bank program",
+    "company": "Canada .ca",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/employment-social-development/programs/job-bank.html"
+  },
+  {
+    "role": "Job opportunities: Global Affairs Canada",
+    "company": "GAC",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://international.canada.ca/en/global-affairs/corporate/jobs"
+  },
+  {
+    "role": "Look for jobs in Canada",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/job-search.html"
+  },
+  {
+    "role": "Government of Canada jobs",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
     "trend": "up",
     "skills": [
-      "Model Serving",
-      "MLOps",
-      "Python",
-      "Kubernetes"
+      "Security"
     ],
-    "source": "career site",
-    "url": "https://www.wealthsimple.com/en-ca/careers"
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/services/jobs/opportunities/government.html"
   },
   {
-    "role": "Senior UX Researcher",
-    "company": "Canada Post",
-    "location": "Ottawa, ON",
-    "salary": "CA$105k–135k",
-    "trend": "stable",
+    "role": "Careers",
+    "company": "the Competition Bureau",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://competition-bureau.canada.ca/en/how-we-foster-competition/our-organization/careers-competition-bureau"
+  },
+  {
+    "role": "Jobs",
+    "company": "CDS - Canadian Digital Service",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://digital.canada.ca/jobs"
+  },
+  {
+    "role": "Careers",
+    "company": "Employment and Social Development Canada/Service ...",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/employment-social-development/campaigns/recruitment.html"
+  },
+  {
+    "role": "Available jobs near Mississauga ( ON )",
+    "company": "Search",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?mid=22433"
+  },
+  {
+    "role": "Jobs and the workplace - Canada.ca Job Search Canada",
+    "company": "Indeed Canada Post - Jobs",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
     "skills": [
-      "Mixed Methods",
-      "Service Design",
-      "Insights"
+      "Security"
     ],
-    "source": "career site",
+    "source": "tavily",
+    "url": "https://www.canada.ca/en/services/jobs.html"
+  },
+  {
+    "role": "Canada Post - Jobs",
+    "company": "Emplois",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
     "url": "https://jobs.canadapost.ca/"
   },
   {
-    "role": "Privacy & Compliance Analyst",
-    "company": "Sun Life",
-    "location": "Toronto, ON",
-    "salary": "CA$95k–125k",
+    "role": "Job Bank Canada",
+    "company": "LinkedIn",
+    "location": "Remote",
+    "salary": "N/A",
     "trend": "up",
-    "skills": [
-      "Privacy Law",
-      "Risk",
-      "Policy",
-      "Audit"
-    ],
-    "source": "career site",
-    "url": "https://www.sunlife.ca/en/about/careers/"
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.linkedin.com/company/jobbankcanada"
   },
   {
-    "role": "Full-Stack Engineer",
-    "company": "Lightspeed",
-    "location": "Montreal, QC",
-    "salary": "CA$115k–155k",
-    "trend": "stable",
-    "skills": [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "TypeScript"
-    ],
-    "source": "career site",
-    "url": "https://www.lightspeedhq.com/careers/"
-  },
-  {
-    "role": "Sustainability Data Analyst",
-    "company": "CIBC",
-    "location": "Toronto, ON",
-    "salary": "CA$95k–120k",
+    "role": "Engineering Jobs Canada , Toronto, Vancouver postings for English...",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
     "trend": "up",
-    "skills": [
-      "ESG",
-      "Reporting",
-      "SQL",
-      "BI"
-    ],
-    "source": "career site",
-    "url": "https://www.cibc.com/en/about-cibc/careers.html"
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.learn4good.com/jobs/language/english/list/engineering/canada/"
   },
   {
-    "role": "Technical Program Manager",
-    "company": "Amazon",
-    "location": "Vancouver, BC",
-    "salary": "CA$140k–190k",
-    "trend": "stable",
-    "skills": [
-      "Program Delivery",
-      "Cloud",
-      "Stakeholders"
-    ],
-    "source": "career site",
-    "url": "https://www.amazon.jobs/"
-  },
-  {
-    "role": "Solutions Architect",
-    "company": "Microsoft",
-    "location": "Toronto, ON",
-    "salary": "CA$150k–200k",
+    "role": "Job Bank Canada",
+    "company": "Jobs in Canada : Job Bank Canada .com, Find...",
+    "location": "Canada",
+    "salary": "N/A",
     "trend": "up",
-    "skills": [
-      "Azure",
-      "Customer Success",
-      "Cloud Migration"
-    ],
-    "source": "career site",
-    "url": "https://careers.microsoft.com/"
+    "skills": [],
+    "source": "tavily",
+    "url": "https://jobbankcanada.com/"
+  },
+  {
+    "role": "Job postings",
+    "company": "Applied Scientist II",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobillico.com/en/job-offer/microsoft-canadagOwtGc/applied-scientist-ii/15199384"
+  },
+  {
+    "role": "Job Bank",
+    "company": "Unknown",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.jobbank.gc.ca/"
+  },
+  {
+    "role": "LMIA Jobs in Canada - Discover Jobs for...",
+    "company": "Canada Career Site",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canadacareersite.com/"
+  },
+  {
+    "role": "Home",
+    "company": "Canada .ca",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://www.canada.ca/en.html"
+  },
+  {
+    "role": "Jobs",
+    "company": "Wel Come to Jobbankcanada.us",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://jobbankcanada.us/"
+  },
+  {
+    "role": "Working",
+    "company": "Walmart Canada | Jobs and Careers",
+    "location": "Canada",
+    "salary": "N/A",
+    "trend": "up",
+    "skills": [],
+    "source": "tavily",
+    "url": "https://careers.walmart.ca/"
   }
 ]

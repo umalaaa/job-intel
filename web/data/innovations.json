@@ -1,95 +1,77 @@
 {
-  "updatedAt": "2026-01-18",
+  "updatedAt": "2026-01-20",
   "categories": [
     {
-      "name": "Applied AI",
-      "count": 18
-    },
-    {
       "name": "Cybersecurity",
-      "count": 14
+      "count": 3
     },
     {
-      "name": "Digital Health",
-      "count": 11
+      "name": "Clean Energy",
+      "count": 1
     },
     {
       "name": "Climate Tech",
-      "count": 9
-    },
-    {
-      "name": "Fintech",
-      "count": 8
+      "count": 1
     }
   ],
   "topRoles": [
     {
-      "role": "AI Enablement Lead",
-      "company": "Ontario Health",
-      "location": "Toronto, ON",
-      "salary": "CA$130k–165k",
+      "role": "Jobs and the workplace",
+      "company": "Canada.ca",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "AI Strategy",
-        "Change Mgmt",
-        "Data Governance"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://www.ontariohealth.ca/careers",
-      "innovations": [
-        "Applied AI",
-        "Digital Health"
-      ]
-    },
-    {
-      "role": "Security Product Manager",
-      "company": "OpenText",
-      "location": "Waterloo, ON",
-      "salary": "CA$120k–160k",
-      "trend": "up",
-      "skills": [
-        "Product Strategy",
-        "Zero Trust",
-        "Roadmapping"
-      ],
-      "source": "career site",
-      "url": "https://www.opentext.com/about/careers",
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs.html",
       "innovations": [
         "Cybersecurity"
       ]
     },
     {
-      "role": "Sustainability Analytics Lead",
-      "company": "Brookfield",
-      "location": "Toronto, ON",
-      "salary": "CA$135k–175k",
-      "trend": "stable",
+      "role": "Government of Canada jobs",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
       "skills": [
-        "ESG",
-        "Data Analytics",
-        "Reporting"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://careers.brookfield.com/",
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs/opportunities/government.html",
       "innovations": [
-        "Climate Tech"
+        "Cybersecurity"
       ]
     },
     {
-      "role": "Principal Platform Engineer",
-      "company": "Nuvei",
-      "location": "Montreal, QC",
-      "salary": "CA$150k–190k",
+      "role": "Jobs and the workplace - Canada.ca Job Search Canada",
+      "company": "Indeed Canada Post - Jobs",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "Distributed Systems",
-        "Kubernetes",
-        "SRE"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://www.nuvei.com/careers/",
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs.html",
       "innovations": [
-        "Fintech"
+        "Cybersecurity"
+      ]
+    },
+    {
+      "role": "Home",
+      "company": "Canada .ca",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canada.ca/en.html",
+      "innovations": [
+        "Clean Energy",
+        "Climate Tech"
       ]
     }
   ]

@@ -1,141 +1,255 @@
 {
-  "updatedAt": "2026-01-18",
+  "updatedAt": "2026-01-20",
   "rareRoles": [
     {
-      "role": "Quantum Software Engineer",
-      "company": "D-Wave",
-      "location": "Burnaby, BC",
-      "salary": "CA$140k–190k",
+      "role": "View 73,547 job postings near various occupations on Job Bank...",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/jobsearch/"
+    },
+    {
+      "role": "Job opportunities",
+      "company": "inspection. canada .ca",
+      "location": "Canada",
+      "salary": "10-10",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities"
+    },
+    {
+      "role": "Youth and student employment",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "http://www.gc.ca/en/services/jobs/opportunities/student.html"
+    },
+    {
+      "role": "Hiring Fill a position",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/employers"
+    },
+    {
+      "role": "Recruit and hire",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/intro/recruitandhire"
+    },
+    {
+      "role": "Available jobs near Saint John (NB)",
+      "company": "Search",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?d=50&mid=22380&sort=M"
+    },
+    {
+      "role": "Temporary Foreign Workers",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/temporary-foreign-workers"
+    },
+    {
+      "role": "Jobs and the workplace",
+      "company": "Canada.ca",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "Quantum Algorithms",
-        "Python",
-        "Simulation"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://www.dwavesys.com/company/careers/"
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs.html"
     },
     {
-      "role": "XR Experience Designer",
-      "company": "Unity",
-      "location": "Remote - Canada",
-      "salary": "CA$120k–155k",
-      "trend": "stable",
-      "skills": [
-        "XR",
-        "Interaction Design",
-        "Prototyping"
-      ],
-      "source": "career site",
-      "url": "https://unity.com/careers"
-    },
-    {
-      "role": "Robotics Deployment Lead",
-      "company": "Clearpath Robotics",
-      "location": "Kitchener, ON",
-      "salary": "CA$125k–165k",
+      "role": "Job Bank – Job Search",
+      "company": "Canada.ca",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "Robotics",
-        "Operations",
-        "Field Deployment"
+        "Go"
       ],
-      "source": "career site",
-      "url": "https://clearpathrobotics.com/careers/"
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/mobile/job-bank-job-search.html"
     },
     {
-      "role": "Climate Data Scientist",
-      "company": "Carbon Engineering",
-      "location": "Squamish, BC",
-      "salary": "CA$115k–150k",
+      "role": "External and Internal Hiring",
+      "company": "Canada.ca",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/public-service-commission/services/staffing-assessment-tools-resources/human-resources-specialists-hiring-managers/advertise-job/external-internal-hiring.html"
+    },
+    {
+      "role": "About the Job Bank program",
+      "company": "Canada .ca",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/employment-social-development/programs/job-bank.html"
+    },
+    {
+      "role": "Look for jobs in Canada",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/job-search.html"
+    },
+    {
+      "role": "Government of Canada jobs",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "Climate Modeling",
-        "Python",
-        "Data Science"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://carbonengineering.com/careers/"
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs/opportunities/government.html"
     },
     {
-      "role": "Privacy UX Designer",
-      "company": "TELUS Digital",
-      "location": "Vancouver, BC",
-      "salary": "CA$110k–145k",
-      "trend": "stable",
-      "skills": [
-        "Privacy",
-        "UX",
-        "Research"
-      ],
-      "source": "career site",
-      "url": "https://www.telus.com/en/about/careers"
+      "role": "Available jobs near Mississauga ( ON )",
+      "company": "Search",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?mid=22433"
     },
     {
-      "role": "AI Safety Researcher",
-      "company": "Cohere",
-      "location": "Toronto, ON",
-      "salary": "CA$160k–210k",
+      "role": "Jobs and the workplace - Canada.ca Job Search Canada",
+      "company": "Indeed Canada Post - Jobs",
+      "location": "Canada",
+      "salary": "N/A",
       "trend": "up",
       "skills": [
-        "AI Safety",
-        "NLP",
-        "Evaluation"
+        "Security"
       ],
-      "source": "career site",
-      "url": "https://cohere.com/careers"
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/services/jobs.html"
+    },
+    {
+      "role": "Canada Post - Jobs",
+      "company": "Emplois",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://jobs.canadapost.ca/"
+    },
+    {
+      "role": "Engineering Jobs Canada , Toronto, Vancouver postings for English...",
+      "company": "Unknown",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.learn4good.com/jobs/language/english/list/engineering/canada/"
+    },
+    {
+      "role": "Job postings",
+      "company": "Applied Scientist II",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.jobillico.com/en/job-offer/microsoft-canadagOwtGc/applied-scientist-ii/15199384"
+    },
+    {
+      "role": "LMIA Jobs in Canada - Discover Jobs for...",
+      "company": "Canada Career Site",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canadacareersite.com/"
+    },
+    {
+      "role": "Home",
+      "company": "Canada .ca",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://www.canada.ca/en.html"
     }
   ],
   "weirdRoles": [
     {
-      "role": "Digital Wellbeing Coach",
-      "company": "TELUS Health",
-      "location": "Remote - Canada",
-      "salary": "CA$80k–105k",
-      "trend": "stable",
-      "skills": [
-        "Coaching",
-        "Behavior Change"
-      ],
-      "source": "career site",
-      "url": "https://www.telushealth.com/en/careers",
-      "weirdTags": [
-        "Wellbeing",
-        "Remote"
-      ]
-    },
-    {
-      "role": "Prompt Librarian",
-      "company": "RBC",
-      "location": "Toronto, ON",
-      "salary": "CA$95k–125k",
+      "role": "Job opportunities",
+      "company": "inspection. canada .ca",
+      "location": "Canada",
+      "salary": "10-10",
       "trend": "up",
-      "skills": [
-        "AI/ML",
-        "Knowledge Mgmt"
-      ],
-      "source": "career site",
-      "url": "https://jobs.rbc.com/ca/en",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://inspection.canada.ca/en/about-cfia/job-opportunities",
       "weirdTags": [
-        "Generative AI",
-        "Documentation"
-      ]
-    },
-    {
-      "role": "Algorithmic Fairness Analyst",
-      "company": "Shopify",
-      "location": "Remote - Canada",
-      "salary": "CA$120k–150k",
-      "trend": "up",
-      "skills": [
-        "Responsible AI",
         "Policy"
+      ]
+    },
+    {
+      "role": "Job Bank – Job Search",
+      "company": "Canada.ca",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [
+        "Go"
       ],
-      "source": "career site",
-      "url": "https://www.shopify.com/careers",
+      "source": "tavily",
+      "url": "https://www.canada.ca/en/mobile/job-bank-job-search.html",
       "weirdTags": [
-        "Ethics",
-        "Governance"
+        "Policy"
+      ]
+    },
+    {
+      "role": "Working",
+      "company": "Walmart Canada | Jobs and Careers",
+      "location": "Canada",
+      "salary": "N/A",
+      "trend": "up",
+      "skills": [],
+      "source": "tavily",
+      "url": "https://careers.walmart.ca/",
+      "weirdTags": [
+        "Policy"
       ]
     }
   ]
