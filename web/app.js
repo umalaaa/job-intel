@@ -4,8 +4,11 @@ class JobIntelligenceApp {
     this.translations = {};
     this.summaryData = null;
     this.rolesData = null;
+    this.filteredRoles = null;
     this.innovationsData = null;
     this.rareJobsData = null;
+    this.searchQuery = '';
+    this.isLoading = true;
 
     this.translations = {
       en: {
@@ -64,6 +67,7 @@ class JobIntelligenceApp {
   }
 
   async init() {
+    this.showLoading();
     try {
       await Promise.all([
         this.fetchSummary(),
@@ -72,12 +76,61 @@ class JobIntelligenceApp {
         this.fetchRareJobs()
       ]);
 
+      this.filteredRoles = [...this.rolesData];
+      this.isLoading = false;
+      this.hideLoading();
       this.render();
       this.setupEventListeners();
+      this.animateOnScroll();
     } catch (error) {
       console.error('Error initializing app:', error);
+      this.hideLoading();
       this.showError();
     }
+  }
+
+  showLoading() {
+    const loader = document.createElement('div');
+    loader.id = 'appLoader';
+    loader.innerHTML = `
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Loading intelligence data...</p>
+      </div>
+    `;
+    loader.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    `;
+    document.body.appendChild(loader);
+  }
+
+  hideLoading() {
+    const loader = document.getElementById('appLoader');
+    if (loader) {
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => loader.remove(), 500);
+    }
+  }
+
+  animateOnScroll() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.metric-card, .region-card, .skill-item, .insight-card, .category-item, .innovation-role-card, .rare-job-card, .weird-job-card').forEach(el => {
+      observer.observe(el);
+    });
   }
 
   async fetchSummary() {
@@ -160,7 +213,18 @@ class JobIntelligenceApp {
     const tbody = document.getElementById('rolesTableBody');
     tbody.innerHTML = '';
 
-    this.rolesData.forEach((role, index) => {
+    const rolesToRender = this.filteredRoles || this.rolesData;
+
+    if (!rolesToRender.length) {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td colspan="7" style="text-align: center; padding: 2rem; color: var(--color-text-secondary);">
+        ${this.currentLang === 'en' ? 'No matching roles found' : '未找到匹配职位'}
+      </td>`;
+      tbody.appendChild(row);
+      return;
+    }
+
+    rolesToRender.forEach((role, index) => {
       const row = document.createElement('tr');
       row.style.animationDelay = `${index * 0.05}s`;
 
@@ -451,6 +515,26 @@ class JobIntelligenceApp {
       const newLang = this.currentLang === 'en' ? 'zh' : 'en';
       this.updateLanguage(newLang);
     });
+
+    const searchInput = document.getElementById('roleSearch');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        this.searchQuery = e.target.value.toLowerCase().trim();
+        this.filterRoles();
+      });
+    }
+  }
+
+  filterRoles() {
+    if (!this.searchQuery) {
+      this.filteredRoles = [...this.rolesData];
+    } else {
+      this.filteredRoles = this.rolesData.filter(role => {
+        const searchable = `${role.role} ${role.company} ${role.location} ${(role.skills || []).join(' ')}`.toLowerCase();
+        return searchable.includes(this.searchQuery);
+      });
+    }
+    this.renderRolesTable();
   }
 
   formatNumber(num) {

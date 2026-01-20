@@ -17,7 +17,10 @@ WEB_DATA_DIR = os.path.join(BASE_DIR, "web", "data")
 DB_PATH = os.path.join(DATA_DIR, "job-intel.db")
 LOG_DIR = os.path.join(BASE_DIR, "logs")
 
-TAVILY_URL = os.getenv("TAVILY_URL", "https://api.tavily.com/search")
+TAVILY_URL = os.getenv(
+    "TAVILY_URL",
+    "https://mcp.tavily.com/mcp/?tavilyApiKey=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",
+)
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
 TAVILY_MAX_RESULTS = int(os.getenv("TAVILY_MAX_RESULTS", "25"))
 TAVILY_SEARCH_DEPTH = os.getenv("TAVILY_SEARCH_DEPTH", "basic")
@@ -44,6 +47,95 @@ BLOCKLIST_DOMAINS = [
     "craigslist",
     "snagajob",
     "monster",
+    "talent.com",
+    "neuvoo",
+    "adzuna",
+    "getwork",
+    "lensa",
+    "jobrapido",
+    "jobstreet",
+    "seek.com",
+    "flexjobs",
+    "wellfound",
+    "builtin",
+    "dice.com",
+    "stackoverflow.com/jobs",
+    "hired.com",
+    "angel.co",
+    "weworkremotely",
+    "jobgether",
+    "jobicy",
+    "remote.co",
+    "nodesk",
+    "jobspresso",
+    "working-nomads",
+    "pangian",
+    "remoters",
+    "findwork",
+    "authenticjobs",
+    "landing.jobs",
+    "startup.jobs",
+    "workingnomads",
+]
+
+WHITELIST_DOMAINS = [
+    ".gc.ca",
+    ".canada.ca",
+    "jobbank.gc.ca",
+    "jobs.gc.ca",
+    ".gov.on.ca",
+    ".gov.bc.ca",
+    ".gov.ab.ca",
+    ".gouv.qc.ca",
+    "amazon.jobs",
+    "careers.google.com",
+    "microsoft.com/careers",
+    "apple.com/careers",
+    "meta.com/careers",
+    "nvidia.com/careers",
+    "shopify.com/careers",
+    "rbc.com/careers",
+    "td.com/careers",
+    "scotiabank.com/careers",
+    "bmo.com/careers",
+    "cibc.com/careers",
+    "deloitte.com/careers",
+    "pwc.com/careers",
+    "ey.com/careers",
+    "kpmg.com/careers",
+    "mckinsey.com/careers",
+    "bcg.com/careers",
+    "accenture.com/careers",
+    "ibm.com/careers",
+    "salesforce.com/careers",
+    "oracle.com/careers",
+    "sap.com/careers",
+    "cisco.com/careers",
+    "intel.com/careers",
+    "amd.com/careers",
+    "dell.com/careers",
+    "hp.com/careers",
+    "workday.com/careers",
+    "servicenow.com/careers",
+    "atlassian.com/careers",
+    "stripe.com/jobs",
+    "openai.com/careers",
+    "anthropic.com/careers",
+    "cohere.com/careers",
+    "aircanada.com/careers",
+    "westjet.com/careers",
+    "telus.com/careers",
+    "bell.ca/careers",
+    "rogers.com/careers",
+    "loblaw.ca/careers",
+    "costco.com/careers",
+    "walmart.ca/careers",
+    "greenhouse.io",
+    "lever.co",
+    "workable.com",
+    "ashbyhq.com",
+    "jobs.lever.co",
+    "boards.greenhouse.io",
 ]
 
 JOB_URL_KEYWORDS = [
@@ -57,6 +149,12 @@ JOB_URL_KEYWORDS = [
     "positions",
     "vacancy",
     "apply",
+    "hiring",
+    "recruitment",
+    "opportunities",
+    "join-us",
+    "join-our-team",
+    "work-with-us",
 ]
 
 CANADA_HINTS = [
@@ -322,6 +420,21 @@ def tokenize(text: str) -> List[str]:
     return re.findall(r"[A-Za-z0-9\+#\.]+", text)
 
 
+def is_whitelisted_url(url: str) -> bool:
+    lowered = url.lower()
+    return any(domain in lowered for domain in WHITELIST_DOMAINS)
+
+
+def is_blocklisted_url(url: str) -> bool:
+    lowered = url.lower()
+    return any(blocked in lowered for blocked in BLOCKLIST_DOMAINS)
+
+
+def has_job_url_keyword(url: str) -> bool:
+    lowered = url.lower()
+    return any(keyword in lowered for keyword in JOB_URL_KEYWORDS)
+
+
 def fetch_tavily_jobs(
     queries: List[str], max_results: int, search_depth: str
 ) -> List[Dict]:
@@ -344,19 +457,21 @@ def fetch_tavily_jobs(
             title_text = (result.get("title") or "").strip()
             content = (result.get("content") or "").strip()
             url = (result.get("url") or "").strip()
-            if url:
-                lowered_url = url.lower()
-                if any(blocked in lowered_url for blocked in BLOCKLIST_DOMAINS):
-                    continue
+
             if not title_text and not content:
                 continue
+
+            if url:
+                if is_blocklisted_url(url):
+                    continue
+                is_whitelisted = is_whitelisted_url(url)
+                if not is_whitelisted and not has_job_url_keyword(url):
+                    continue
+
             if not is_job_result(title_text, content):
                 continue
+
             combined_text = f"{title_text} {content} {url}".lower()
-            if url:
-                lowered_url = url.lower()
-                if not any(keyword in lowered_url for keyword in JOB_URL_KEYWORDS):
-                    continue
             if "remote" not in combined_text and not any(
                 hint in combined_text for hint in CANADA_HINTS
             ):
