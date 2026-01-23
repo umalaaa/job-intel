@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import asyncio
 import structlog
+import os
 
 from src.core.config import settings
 from src.api.routes import jobs, health, admin
@@ -26,6 +28,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount static files (Frontend)
+# Check if web directory exists (it should in Docker and local)
+if os.path.exists("web"):
+    app.mount("/static", StaticFiles(directory="web"), name="static")
+    # Serve index.html at root? Or just let user go to /static/index.html?
+    # Usually better to serve / -> index.html
+    # But StaticFiles at root captures everything.
+    # Let's mount at root but excluding API routes.
+    # FastAPI matches routes in order. API routes are included below.
+    # So we should include routers FIRST, then mount static files at root.
+    pass
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -46,7 +60,6 @@ app.include_router(health.router, prefix="/health", tags=["health"])
 app.include_router(admin.router, prefix=f"{settings.API_V1_STR}/admin", tags=["admin"])
 app.include_router(updates.router, tags=["websockets"])
 
-
-@app.get("/")
-async def root():
-    return {"message": "Welcome to Job Intel API", "docs": "/docs"}
+# Mount static files at root (catch-all)
+if os.path.exists("web"):
+    app.mount("/", StaticFiles(directory="web", html=True), name="static")
