@@ -66,7 +66,61 @@ class JobIntelligenceApp {
     this.init();
   }
 
+  setupWebSocket() {
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const wsUrl = `${protocol}//${window.location.host}/ws/updates`;
+    
+    // In dev mode or separate frontend, might need config
+    // If files served by FastAPI, relative path works.
+    // If served by file://, WS won't work easily without hardcoded URL.
+    // Assume served by FastAPI or same origin.
+    
+    try {
+        this.ws = new WebSocket(wsUrl);
+        
+        this.ws.onopen = () => {
+            console.log('WebSocket connected');
+        };
+        
+        this.ws.onmessage = (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                if (data.type === 'jobs_updated') {
+                    this.showNotification(`New jobs from ${data.source}: ${data.count}`);
+                    this.fetchRoles(); 
+                    this.fetchSummary();
+                }
+            } catch (e) {
+                console.error('WS message error', e);
+            }
+        };
+        
+        this.ws.onclose = () => {
+            console.log('WebSocket disconnected, retrying in 5s...');
+            setTimeout(() => this.setupWebSocket(), 5000);
+        };
+    } catch (e) {
+        console.warn('WebSocket setup failed', e);
+    }
+  }
+
+  showNotification(message) {
+    const note = document.createElement('div');
+    note.className = 'notification-toast';
+    note.textContent = message;
+    document.body.appendChild(note);
+    
+    setTimeout(() => {
+        note.classList.add('show');
+        setTimeout(() => {
+            note.classList.remove('show');
+            setTimeout(() => note.remove(), 300);
+        }, 3000);
+    }, 10);
+  }
+
   async init() {
+    this.setupWebSocket();
     this.showLoading();
     try {
       await Promise.all([

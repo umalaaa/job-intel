@@ -1,0 +1,29 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy configuration files
+COPY pyproject.toml README.md ./
+
+# Install python dependencies
+RUN pip install --no-cache-dir .
+
+# Copy source code
+COPY src/ src/
+COPY workers/ workers/
+
+# Create non-root user
+RUN useradd -m appuser && chown -R appuser:appuser /app
+USER appuser
+
+# Health check (check if worker is running)
+# This is tricky for workers, usually check if process exists or use celery inspect
+# For simplicity, we skip complex healthcheck or use a simple one
+# HEALTHCHECK CMD celery -A workers.celery_app inspect ping || exit 1
+
+CMD ["celery", "-A", "workers.celery_app", "worker", "--loglevel=info"]
